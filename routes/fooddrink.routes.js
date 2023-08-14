@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const isLoggedIn = require('../middleware/isLoggedIn');
 
 // Requiring Models
 const Fooddrink = require('../models/Fooddrink.model.js');
@@ -10,12 +11,40 @@ const User = require('../models/User.model.js');
 router.get('/fooddrinkSpots', async (req, res) => {
   try {
     // Get all Food and Drink Spots from our Database via .find() method
-    let fooddrinkSpotsFromDB = await Leisure.find();
-    res.render('categories/fooddrinkSpots/fooddrink.list.hbs', {
+    let fooddrinkSpotsFromDB = await Fooddrink.find();
+    res.render('categories/fooddrinkSpots/foodndrink.list.hbs', {
       fooddrinkSpots: fooddrinkSpotsFromDB,
     });
   } catch (error) {
     console.log('Error while getting Food and Drink Spots', error);
+  }
+});
+
+// GET Route to display info about a specific Food and Drink Spots
+router.get('/fooddrinkSpots/:fooddrinkId', isLoggedIn, async (req, res) => {
+  try {
+    //ES6 Object Destructuring with fooddrinkId route param
+    const { fooddrinkId } = req.params;
+
+    // Find Food and Drink Spot via its Id inside the Database
+    let foundFooddrinkSpot = await Fooddrink.findById(fooddrinkId);
+
+    const users = await User.find();
+    // populate
+    await foundFooddrinkSpot.populate('reviews name');
+    await foundFooddrinkSpot.populate({
+      path: 'reviews',
+      populate: {
+        path: 'name',
+        model: 'User',
+      },
+    });
+    res.render('categories/fooddrinkSpots/foodndrink.detail.hbs', {
+      fooddrink: foundFooddrinkSpot,
+      users,
+    });
+  } catch (error) {
+    console.log(error);
   }
 });
 

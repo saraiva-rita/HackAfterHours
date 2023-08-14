@@ -12,10 +12,12 @@ const leisureSpots = [
   {
     name: 'Minigolf Lisbon',
     address: 'Calçada Ferragial 8, 1200-484 Lisboa',
-    description: 'xx',
-    spotUrl: 'minigolflisbon.com',
-    imgUrl: 'xx',
-    schedule: 'xx',
+    description:
+      'The Unique Minigolf Experience in the heart of Lisbon, has been specially designed for challenge and adventure with every putter in mind, whether you are a novice or a pro',
+    spotUrl: 'www.minigolflisbon.com',
+    imgUrl:
+      'https://lh3.googleusercontent.com/p/AF1QipOf3v9cQeXA3gMCR9OPZ3O7XreBBi53A5Xkkri5=s1360-w1360-h1020',
+    schedule: 'Every Day: 12hrs – 23hrs',
   },
 ];
 

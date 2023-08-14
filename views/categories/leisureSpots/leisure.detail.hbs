@@ -1,0 +1,42 @@
+<h1>{{leisure.name}}</h1>
+<br />
+<p>Description: {{leisure.description}}</p>
+<p>Address: {{leisure.address}}</p>
+<p>Website: {{leisure.spotUrl}}</p>
+<p>Schedule: {{leisure.schedule}}</p>
+
+<!-- Review Section -->
+<h4>Leave a Review!</h4>
+<!-- Form to Create a Review -->
+<form action='/review/create/{{leisure._id}}' method='post'>
+  <select name='author'>
+    {{#each users}}
+      <option value='{{_id}}'>{{username}}</option>
+    {{/each}}
+
+  </select>
+  <label for='content'>Content of the Review</label>
+  <textarea
+    name='content'
+    id='content'
+    cols='30'
+    rows='5'
+    placeholder='Write your Review here'
+  ></textarea>
+  <button type='submit'>Create the review</button>
+</form>
+<!-- End of the Form to Create a Review -->
+<br />
+<!-- Display all the Reviews of the Leisure Spot that we're seeing -->
+{{#each leisure.reviews}}
+  <div>
+    <!-- Actually displaying the review -->
+    <p><span>By {{author.username}}</span>: {{content}}</p>
+    <!-- Deleting the Review -->
+    <form action='/review/delete/{{_id}}' method='post'>
+      <button type='submit'>Delete</button>
+    </form>
+  </div>
+{{/each}}
+<br />
+<a href='/leisureSpots'>Return</a>

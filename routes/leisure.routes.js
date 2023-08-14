@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const isLoggedIn = require('../middleware/isLoggedIn');
 
 // Requiring Models
 const Leisure = require('../models/Leisure.model.js');
@@ -16,6 +17,34 @@ router.get('/leisureSpots', async (req, res) => {
     });
   } catch (error) {
     console.log('Error while getting Leisure Spots', error);
+  }
+});
+
+// GET Route to display info about a specific Leisure Spot
+router.get('/leisureSpots/:leisureId', isLoggedIn, async (req, res) => {
+  try {
+    //ES6 Object Destructuring with leisureId route param
+    const { leisureId } = req.params;
+
+    // Find Leisure Spot via its Id inside the Database
+    let foundLeisureSpot = await Leisure.findById(leisureId);
+
+    const users = await User.find();
+    // populate
+    await foundLeisureSpot.populate('reviews name');
+    await foundLeisureSpot.populate({
+      path: 'reviews',
+      populate: {
+        path: 'name',
+        model: 'User',
+      },
+    });
+    res.render('categories/leisureSpots/leisure.detail.hbs', {
+      leisure: foundLeisureSpot,
+      users,
+    });
+  } catch (error) {
+    console.log(error);
   }
 });
 

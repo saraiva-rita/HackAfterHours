@@ -1,13 +1,13 @@
 <h1>Food'N'Drinks</h1>
 {{#each fooddrinkSpots}}
-    <div>
-        <h3>{{name}}</h3>
+  <div>
+    <h3>{{name}}</h3>
 
-        <form action="/fooddrink/{{_id}}/" method="get">
-            <button>See more</button>
-        </form>
-    </div>
+    <form action='/fooddrinkSpots/{{_id}}/' method='get'>
+      <button>See more</button>
+    </form>
+  </div>
 {{/each}}
 
-<br>   
-<a href="/">Return to main menu</a>
+<br />
+<a href='/'>Return to main menu</a>

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const isLoggedIn = require('../middleware/isLoggedIn');
 
 // Requiring Models
 const Culture = require('../models/Culture.model.js');
@@ -16,6 +17,34 @@ router.get('/cultureSpots', async (req, res) => {
     });
   } catch (error) {
     console.log('Error while getting Culture Spots', error);
+  }
+});
+
+// GET Route to display info about a specific Culture Spot
+router.get('/cultureSpots/:cultureId', isLoggedIn, async (req, res) => {
+  try {
+    //ES6 Object Destructuring with cultureId route param
+    const { cultureId } = req.params;
+
+    // Find Culture Spot via its Id inside the Database
+    let foundCultureSpot = await Culture.findById(cultureId);
+
+    const users = await User.find();
+    // populate
+    await foundCultureSpot.populate('reviews name');
+    await foundCultureSpot.populate({
+      path: 'reviews',
+      populate: {
+        path: 'name',
+        model: 'User',
+      },
+    });
+    res.render('categories/cultureSpots/culture.detail.hbs', {
+      culture: foundCultureSpot,
+      users,
+    });
+  } catch (error) {
+    console.log(error);
   }
 });
 

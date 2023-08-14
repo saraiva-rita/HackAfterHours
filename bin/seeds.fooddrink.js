@@ -17,6 +17,15 @@ const fooddrinkSpots = [
     imgUrl: 'xx',
     schedule: 'xx',
   },
+  {
+    name: 'Sol e Pesca',
+    address: 'Rua Nova do Carvalho, 44 Lisboa',
+    description:
+      'Low-key, fishing-themed nook with a patio serving a vast array of canned seafood, plus beer & wine. The walls are covered with an array of fishing tackle: rods, lines, hooks, bait, floats and dozens of other interesting items only identifiable to experienced fishermen.',
+    spotUrl: 'http://www.solepesca.com',
+    imgUrl: 'xx',
+    schedule: 'xx',
+  },
 ];
 
 async function insertFooddrink() {
