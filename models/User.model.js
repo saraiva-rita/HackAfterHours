@@ -1,11 +1,10 @@
 const { Schema, model } = require("mongoose");
 
-// TODO: Please make sure you edit the User model to whatever makes sense in this case
 const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: false,
+      required: true,
       unique: true,
       trim: true,
     },
@@ -15,16 +14,33 @@ const userSchema = new Schema(
       unique: true,
       trim: true,
       lowercase: true,
+      match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address'],
     },
     password: {
       type: String,
       required: true,
     },
-  },
-  {
+    Review: [{
+      type: Schema.Types.ObjectId,
+      ref: "Review",
+    }],
+    favoriteCulture: [{
+        type: Schema.Types.ObjectId,
+        ref: "Culture",
+    }],
+    favoriteFoodNdrink: [{
+      type: Schema.Types.ObjectId,
+      ref: "Fooddrink",
+    }],
+    favoriteLeisure: [{
+      type: Schema.Types.ObjectId,
+      ref: "Leisure",
+    }],
     // this second object adds extra properties: `createdAt` and `updatedAt`
-    timestamps: true,
-  }
+  },
+    {
+      timestamps: true
+    }
 );
 
 const User = model("User", userSchema);

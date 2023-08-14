@@ -1,0 +1,13 @@
+<h1>Leisure</h1>
+{{#each leisureSpots}}
+  <div>
+    <h3>{{name}}</h3>
+
+    <form action='/leisureSpots/{{_id}}/' method='get'>
+      <button>See more</button>
+    </form>
+  </div>
+{{/each}}
+
+<br />
+<a href='/'>Return to main menu</a>

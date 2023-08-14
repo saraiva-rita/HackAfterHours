@@ -1,0 +1,13 @@
+<h1>Culture</h1>
+{{#each cultureSpots}}
+    <div>
+        <h3>{{name}}</h3>
+
+        <form action="/cultureSpots/{{_id}}/" method="get">
+            <button>See more</button>
+        </form>
+    </div>
+{{/each}}
+
+<br>   
+<a href="/">Return to main menu</a>
