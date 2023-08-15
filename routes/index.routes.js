@@ -19,7 +19,6 @@ router.get('/profile', isLoggedIn, async (req, res) => {
       .populate('favoriteCulture')
       .populate('favoriteFooddrink');
 
-    console.log(profileInfo);
     res.render('profile', profileInfo);
   } catch (error) {
     console.log(error);

@@ -12,9 +12,7 @@ router.get('/cultureSpots', async (req, res) => {
   try {
     // Get all Culture Spots from our Database via .find() method
     let cultureSpotsFromDB = await Culture.find();
-    res.render('categories/cultureSpots/culture.list.hbs', {
-      cultureSpots: cultureSpotsFromDB,
-    });
+    res.render('categories/cultureSpots/culture.list.hbs', {cultureSpots: cultureSpotsFromDB});
   } catch (error) {
     console.log('Error while getting Culture Spots', error);
   }
@@ -45,24 +43,36 @@ router.get('/cultureSpots/:cultureId', isLoggedIn, async (req, res) => {
 });
 
 // FAVORITES SPOTS Actions
-router.post(
-  '/cultureSpots/addFavs/:cultureId/',
-  isLoggedIn,
-  async (req, res, next) => {
-    const { cultureId } = req.params;
-    const currentUser = req.session.currentUser;
-    try {
-      const favSpot = await User.findByIdAndUpdate(currentUser._id, {
-        $push: { favoriteCulture: cultureId },
-      });
-      console.log(favSpot);
-      console.log(currentUser._id);
+router.post('/cultureSpots/addFavs/:cultureId/', isLoggedIn, async (req, res, next) => {
+  const { cultureId } = req.params;
+  const currentUser = req.session.currentUser;
+  try {    
+    const user = await User.findById(currentUser._id);  
+    /*if (user.favoriteCulture.includes(cultureId)){
+      console.log("its already in your favorite list")
       res.redirect(`/cultureSpots/${cultureId}`);
+      return;
+    } else {*/
+    const favSpot = await User.findByIdAndUpdate(currentUser._id, {$push: { favoriteCulture: cultureId }});
+    res.redirect(`/cultureSpots/${cultureId}`);
     } catch (error) {
-      console.log(error);
-    }
+    console.log(error);
   }
-);
+});
+
+// Remove favorite from profile
+router.post('/cultureSpots/removeFavs/:cultureId/', isLoggedIn, async (req, res, next) => {
+  const { cultureId } = req.params;
+  const currentUser = req.session.currentUser;
+  try {
+    const user = await User.findById(currentUser._id);  
+    const favSpot = await User.findByIdAndUpdate(currentUser._id, {$pull: { favoriteCulture: cultureId }});
+    res.redirect(`/profile`);
+    
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 // REVIEWS ACTIONS
 router.post('/review/culture/:cultureId', async (req, res) => {
@@ -90,19 +100,25 @@ router.post('/review/culture/:cultureId', async (req, res) => {
     console.log(error);
   }
 });
-// the :cultureId is going to wait for a value, is a parameter
+// delete review
 
-router.post('/review/culturedelete/:reviewId', async (req, res) => {
-  const { reviewId } = req.params;
+router.post('/:reviewId/culture-delete/:cultureId', isLoggedIn, async (req, res) => {
+  const {cultureId, reviewId} = req.params;
+  const user = req.session.currentUser;
+  
   try {
-    const removedReview = await Review.findByIdAndRemove(reviewId);
-    await User.findByIdAndUpdate(removedReview.author, {
-      $pull: { reviews: removedReview._id },
-    });
-    res.redirect('/cultureSpots');
+    await Review.findByIdAndRemove(reviewId);
+
+    // update the Culture Spot after remove the review
+    await Culture.findByIdAndUpdate(cultureId, {$pull: { reviews: reviewId }});
+
+    // remove the review from the user
+    await User.findByIdAndUpdate(user._id, {$pull: { review: reviewId }});
+      res.redirect(`/cultureSpots/${cultureId}`);
   } catch (error) {
-    console.log(error);
+      console.log(error);
   }
 });
+
 
 module.exports = router;

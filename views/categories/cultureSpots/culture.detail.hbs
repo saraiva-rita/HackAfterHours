@@ -2,7 +2,7 @@
 <br />
 <p>Description: {{description}}</p>
 <p>Address: {{address}}</p>
-<p>Website: {{spotUrl}}</p>
+<p>Website: <a href={{spotUrl}}>{{spotUrl}}</a></p>
 <p>Schedule: {{schedule}}</p>
 
 <form action='/cultureSpots/addFavs/{{_id}}' method='post'><button
@@ -33,7 +33,7 @@
     <!-- Actually displaying the review -->
     <p><span>Review Author: {{author.username}}</span> <br />{{content}}</p>
     <!-- Deleting the Review -->
-    <form action='/review/culturedelete/:reviewId/{{_id}}' method='post'>
+    <form action='/{{_id}}/culture-delete/{{../_id}}' method='post'>
       <button type='submit'>Delete</button>
     </form>
   </div>

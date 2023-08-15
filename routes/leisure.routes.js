@@ -45,37 +45,39 @@ router.get('/leisureSpots/:leisureId', isLoggedIn, async (req, res) => {
 
 // FAVORITES SPOTS Actions
 // Add Favorites
-router.post(
-  '/leisureSpots/addFavs/:leisureId/',
-  isLoggedIn,
-  async (req, res, next) => {
-    const { leisureId } = req.params;
-    const currentUser = req.session.currentUser;
-    try {
-      const favSpot = await User.findByIdAndUpdate(currentUser._id, {
-        $push: { favoriteLeisure: leisureId },
-      });
-      res.redirect(`/leisureSpots/${leisureId}`);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-);
-
-router.post('/favorite/delete/:leisureId', async (req, res) => {
+router.post('/leisureSpots/addFavs/:leisureId/', isLoggedIn, async (req, res, next) => {
   const { leisureId } = req.params;
+  const currentUser = req.session.currentUser;
   try {
-    const removedFav = await User.findByIdAndRemove(currentUser._id);
-    await User.findByIdAndUpdate(removedFav.author, {
-      $pull: { favoriteLeisure: leisureId },
-    });
-    res.redirect('/leisureSpots');
+    const user = await User.findById(currentUser._id);  
+    /*if (user.favoriteLeisure.includes(leisureId)){
+      console.log("its already in your favorite list")
+      res.redirect(`/leisureSpots/${leisureId}`);
+      return;
+    } else {*/
+    const favSpot = await User.findByIdAndUpdate(currentUser._id, {$push: { favoriteLeisure: leisureId }});
+    res.redirect(`/leisureSpots/${leisureId}`);
+    
   } catch (error) {
     console.log(error);
   }
 });
 
-// Delete Favorites
+
+// Remove favorite from profile
+router.post('/leisureSpots/removeFavs/:leisureId/', isLoggedIn, async (req, res, next) => {
+  const { leisureId } = req.params;
+  const currentUser = req.session.currentUser;
+  try {
+    const user = await User.findById(currentUser._id);  
+    const favSpot = await User.findByIdAndUpdate(currentUser._id, {$pull: { favoriteLeisure: leisureId }});
+    res.redirect(`/profile`);
+    
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 
 // REVIEWS ACTIONS
 router.post('/review/leisure/:leisureId', async (req, res) => {
@@ -103,18 +105,23 @@ router.post('/review/leisure/:leisureId', async (req, res) => {
     console.log(error);
   }
 });
-// the :leisureId is going to wait for a value, is a parameter
+// REVIEWS DELETE
 
-router.post('/review/leisuredelete/:reviewId', async (req, res) => {
-  const { reviewId } = req.params;
+router.post('/:reviewId/leisure-delete/:leisureId', isLoggedIn, async (req, res) => {
+  const {leisureId, reviewId} = req.params;
+  const user = req.session.currentUser;
+  
   try {
-    const removedReview = await Review.findByIdAndRemove(reviewId);
-    await User.findByIdAndUpdate(removedReview.author, {
-      $pull: { reviews: removedReview._id },
-    });
-    res.redirect('/leisureSpots');
+    await Review.findByIdAndRemove(reviewId);
+
+    // update the Leisure Spot after remove the review
+    await Leisure.findByIdAndUpdate(leisureId, {$pull: { reviews: reviewId }});
+
+    // remove the review from the user
+    await User.findByIdAndUpdate(user._id, {$pull: { review: reviewId }});
+      res.redirect(`/leisureSpots/${leisureId}`);
   } catch (error) {
-    console.log(error);
+      console.log(error);
   }
 });
 

@@ -4,14 +4,26 @@
 <br />
 <h2>{{email}}</h2>
 <hr />
+<br>
 {{#each favoriteLeisure}}
   <p>{{this.name}}</p>
+  <form action="/leisureSpots/removeFavs/{{_id}}" method="post">
+    <button type="submit">Delete</button>
+  </form>
 {{/each}}
+<br>
 {{#each favoriteFooddrink}}
   <p>{{this.name}}</p>
+    <form action="/fooddrinkSpots/removeFavs/{{_id}}" method="post">
+    <button type="submit">Delete</button>
+  </form>
 {{/each}}
+<br>
 {{#each favoriteCulture}}
   <p>{{this.name}}</p>
+    <form action="/cultureSpots/removeFavs/{{_id}}" method="post">
+    <button type="submit">Delete</button>
+  </form>
 {{/each}}
 
 <a href='/'>Return to main menu</a>

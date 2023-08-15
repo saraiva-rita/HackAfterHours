@@ -33,7 +33,7 @@
     <!-- Actually displaying the review -->
     <p><span>Review Author: {{author.username}}</span> <br />{{content}}</p>
     <!-- Deleting the Review -->
-    <form action='/review/leisuredelete/:reviewId/{{_id}}' method='post'>
+    <form action='/{{_id}}/leisure-delete/{{../_id}}' method='post'>
       <button type='submit'>Delete</button>
     </form>
   </div>
