@@ -29,39 +29,60 @@ router.get('/cultureSpots/:cultureId', isLoggedIn, async (req, res) => {
     // Find Culture Spot via its Id inside the Database
     let foundCultureSpot = await Culture.findById(cultureId);
 
-    const users = await User.find();
     // populate
-    await foundCultureSpot.populate('reviews name');
     await foundCultureSpot.populate({
       path: 'reviews',
       populate: {
-        path: 'name',
+        path: 'author',
         model: 'User',
       },
     });
-    res.render('categories/cultureSpots/culture.detail.hbs', {
-      culture: foundCultureSpot,
-      users,
-    });
+
+    res.render('categories/cultureSpots/culture.detail.hbs', foundCultureSpot);
   } catch (error) {
     console.log(error);
   }
 });
 
+// FAVORITES SPOTS Actions
+router.post(
+  '/cultureSpots/addFavs/:cultureId/',
+  isLoggedIn,
+  async (req, res, next) => {
+    const { cultureId } = req.params;
+    const currentUser = req.session.currentUser;
+    try {
+      const favSpot = await User.findByIdAndUpdate(currentUser._id, {
+        $push: { favoriteCulture: cultureId },
+      });
+      console.log(favSpot);
+      console.log(currentUser._id);
+      res.redirect(`/cultureSpots/${cultureId}`);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
 // REVIEWS ACTIONS
-router.post('/review/create/:cultureId', async (req, res) => {
+router.post('/review/culture/:cultureId', async (req, res) => {
   try {
     const { cultureId } = req.params;
-    const { content, author } = req.body; // req: info about the request; what was sent through the body
-    const newReview = await Review.create({ content, author });
+    const { content } = req.body; // req: info about the request; what was sent through the body
+    const newReview = await Review.create({ content });
+    const user = req.session.currentUser;
 
     // update the Culture Spot with new review that was created
     const cultureUpdate = await Culture.findByIdAndUpdate(cultureId, {
       $push: { reviews: newReview._id },
     });
 
+    const reviewUpdate = await Review.findByIdAndUpdate(newReview._id, {
+      $push: { author: user._id },
+    });
+
     // add the review to the user
-    const userUpdate = await User.findByIdAndUpdate(author, {
+    const userUpdate = await User.findByIdAndUpdate(user._id, {
       $push: { reviews: newReview._id },
     });
     res.redirect(`/cultureSpots/${cultureId}`);

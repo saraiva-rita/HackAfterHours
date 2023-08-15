@@ -28,41 +28,62 @@ router.get('/fooddrinkSpots/:fooddrinkId', isLoggedIn, async (req, res) => {
 
     // Find Food and Drink Spot via its Id inside the Database
     let foundFooddrinkSpot = await Fooddrink.findById(fooddrinkId);
-
-    const users = await User.find();
-    // populate
-    await foundFooddrinkSpot.populate('reviews name');
+    //populate
     await foundFooddrinkSpot.populate({
       path: 'reviews',
       populate: {
-        path: 'name',
+        path: 'author',
         model: 'User',
       },
     });
-    res.render('categories/fooddrinkSpots/foodndrink.detail.hbs', {
-      fooddrink: foundFooddrinkSpot,
-      users,
-    });
+
+    res.render(
+      'categories/fooddrinkSpots/foodndrink.detail.hbs',
+      foundFooddrinkSpot
+    );
   } catch (error) {
     console.log(error);
   }
 });
 
+// FAVORITES SPOTS Actions
+router.post(
+  '/fooddrinkSpots/addFavs/:fooddrinkId/',
+  isLoggedIn,
+  async (req, res, next) => {
+    const { fooddrinkId } = req.params;
+    const currentUser = req.session.currentUser;
+    try {
+      const favSpot = await User.findByIdAndUpdate(currentUser._id, {
+        $push: { favoriteFooddrink: fooddrinkId },
+      });
+      res.redirect(`/fooddrinkSpots//${fooddrinkId}`);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
 // REVIEWS ACTIONS
-router.post('/review/create/:fooddrinkId', async (req, res) => {
+router.post('/review/fooddrink/:fooddrinkId', async (req, res) => {
   try {
     const { fooddrinkId } = req.params;
-    const { content, author } = req.body; // req: info about the request; what was sent through the body
-    const newReview = await Review.create({ content, author });
+    const { content } = req.body; // req: info about the request; what was sent through the body
+    const user = req.session.currentUser;
+    const newReview = await Review.create({ content });
 
     // update the Food and Drink Spot with new review that was created
     const fooddrinkUpdate = await Fooddrink.findByIdAndUpdate(fooddrinkId, {
       $push: { reviews: newReview._id },
     });
 
+    const reviewUpdate = await Review.findByIdAndUpdate(newReview._id, {
+      $push: { author: user._id },
+    });
+
     // add the review to the user
-    const userUpdate = await User.findByIdAndUpdate(author, {
-      $push: { reviews: newReview._id },
+    const userUpdate = await User.findByIdAndUpdate(user._id, {
+      $push: { review: newReview._id },
     });
     res.redirect(`/fooddrinkSpots/${fooddrinkId}`);
   } catch (error) {

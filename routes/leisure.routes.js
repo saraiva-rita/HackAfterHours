@@ -28,41 +28,59 @@ router.get('/leisureSpots/:leisureId', isLoggedIn, async (req, res) => {
 
     // Find Leisure Spot via its Id inside the Database
     let foundLeisureSpot = await Leisure.findById(leisureId);
-
-    const users = await User.find();
-    // populate
-    await foundLeisureSpot.populate('reviews name');
+    //populate
     await foundLeisureSpot.populate({
       path: 'reviews',
       populate: {
-        path: 'name',
+        path: 'author',
         model: 'User',
       },
     });
-    res.render('categories/leisureSpots/leisure.detail.hbs', {
-      leisure: foundLeisureSpot,
-      users,
-    });
+
+    res.render('categories/leisureSpots/leisure.detail.hbs', foundLeisureSpot);
   } catch (error) {
     console.log(error);
   }
 });
 
+// FAVORITES SPOTS Actions
+router.post(
+  '/leisureSpots/addFavs/:leisureId/',
+  isLoggedIn,
+  async (req, res, next) => {
+    const { leisureId } = req.params;
+    const currentUser = req.session.currentUser;
+    try {
+      const favSpot = await User.findByIdAndUpdate(currentUser._id, {
+        $push: { favoriteLeisure: leisureId },
+      });
+      res.redirect(`/leisureSpots/${leisureId}`);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
 // REVIEWS ACTIONS
-router.post('/review/create/:leisureId', async (req, res) => {
+router.post('/review/leisure/:leisureId', async (req, res) => {
   try {
     const { leisureId } = req.params;
-    const { content, author } = req.body; // req: info about the request; what was sent through the body
-    const newReview = await Review.create({ content, author });
+    const { content } = req.body; // req: info about the request; what was sent through the body
+    const user = req.session.currentUser;
+    const newReview = await Review.create({ content });
 
     // update the Leisure Spot with new review that was created
-    const cultureUpdate = await Leisure.findByIdAndUpdate(leisureId, {
+    const leisureUpdate = await Leisure.findByIdAndUpdate(leisureId, {
       $push: { reviews: newReview._id },
     });
 
+    const reviewUpdate = await Review.findByIdAndUpdate(newReview._id, {
+      $push: { author: user._id },
+    });
+
     // add the review to the user
-    const userUpdate = await User.findByIdAndUpdate(author, {
-      $push: { reviews: newReview._id },
+    const userUpdate = await User.findByIdAndUpdate(user._id, {
+      $push: { review: newReview._id },
     });
     res.redirect(`/leisureSpots/${leisureId}`);
   } catch (error) {

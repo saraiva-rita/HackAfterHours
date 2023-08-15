@@ -1,10 +1,17 @@
 <a href='/auth/logout'>Logout</a>
 
-{{#if userInSession}}
-    <h1>{{userInSession.username}} Profile Page </h1>
-{{else}}
-    <p>Not logged in!</p>
-{{/if}}
-<br>
- <a href="/">Return to main menu</a>
+<h1>{{username}} Profile Page </h1>
+<br />
+<h2>{{email}}</h2>
+<hr />
+{{#each favoriteLeisure}}
+  <p>{{this.name}}</p>
+{{/each}}
+{{#each favoriteFooddrink}}
+  <p>{{this.name}}</p>
+{{/each}}
+{{#each favoriteCulture}}
+  <p>{{this.name}}</p>
+{{/each}}
 
+<a href='/'>Return to main menu</a>

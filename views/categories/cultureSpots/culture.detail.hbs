@@ -1,20 +1,20 @@
-<h1>{{culture.name}}</h1>
+<h1>{{name}}</h1>
 <br />
-<p>Description: {{culture.description}}</p>
-<p>Address: {{culture.address}}</p>
-<p>Website: {{culture.spotUrl}}</p>
-<p>Schedule: {{culture.schedule}}</p>
+<p>Description: {{description}}</p>
+<p>Address: {{address}}</p>
+<p>Website: {{spotUrl}}</p>
+<p>Schedule: {{schedule}}</p>
+
+<form action='/cultureSpots/addFavs/{{_id}}' method='post'><button
+    type='submit'
+  >Add Favorite Spot</button>
+</form>
 
 <!-- Review Section -->
 <h4>Leave a Review!</h4>
 <!-- Form to Create a Review -->
-<form action='/review/create/{{culture._id}}' method='post'>
-  <select name='author'>
-    {{#each users}}
-      <option value='{{_id}}'>{{username}}</option>
-    {{/each}}
+<form action='/review/culture/{{_id}}' method='post'>
 
-  </select>
   <label for='content'>Content of the Review</label>
   <textarea
     name='content'
@@ -28,10 +28,10 @@
 <!-- End of the Form to Create a Review -->
 <br />
 <!-- Display all the Reviews of the Culture Spot that we're seeing -->
-{{#each culture.reviews}}
+{{#each reviews}}
   <div>
     <!-- Actually displaying the review -->
-    <p><span>By {{author.username}}</span>: {{content}}</p>
+    <p><span>Review Author: {{author.username}}</span> <br />{{content}}</p>
     <!-- Deleting the Review -->
     <form action='/review/delete/{{_id}}' method='post'>
       <button type='submit'>Delete</button>

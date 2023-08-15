@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require('mongoose');
 
 const userSchema = new Schema(
   {
@@ -20,29 +20,37 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    Review: [{
-      type: Schema.Types.ObjectId,
-      ref: "Review",
-    }],
-    favoriteCulture: [{
+    review: [
+      {
         type: Schema.Types.ObjectId,
-        ref: "Culture",
-    }],
-    favoriteFoodNdrink: [{
-      type: Schema.Types.ObjectId,
-      ref: "Fooddrink",
-    }],
-    favoriteLeisure: [{
-      type: Schema.Types.ObjectId,
-      ref: "Leisure",
-    }],
+        ref: 'Review',
+      },
+    ],
+    favoriteCulture: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Culture',
+      },
+    ],
+    favoriteFooddrink: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Fooddrink',
+      },
+    ],
+    favoriteLeisure: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Leisure',
+      },
+    ],
     // this second object adds extra properties: `createdAt` and `updatedAt`
   },
-    {
-      timestamps: true
-    }
+  {
+    timestamps: true,
+  }
 );
 
-const User = model("User", userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;
