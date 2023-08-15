@@ -57,7 +57,7 @@ router.post(
       const favSpot = await User.findByIdAndUpdate(currentUser._id, {
         $push: { favoriteFooddrink: fooddrinkId },
       });
-      res.redirect(`/fooddrinkSpots//${fooddrinkId}`);
+      res.redirect(`/fooddrinkSpots/${fooddrinkId}`);
     } catch (error) {
       console.log(error);
     }
@@ -92,7 +92,7 @@ router.post('/review/fooddrink/:fooddrinkId', async (req, res) => {
 });
 // the :fooddrinkId is going to wait for a value, is a parameter
 
-router.post('/review/delete/:reviewId', async (req, res) => {
+router.post('/review/fooddrinkdelete/:reviewId', async (req, res) => {
   const { reviewId } = req.params;
   try {
     const removedReview = await Review.findByIdAndRemove(reviewId);

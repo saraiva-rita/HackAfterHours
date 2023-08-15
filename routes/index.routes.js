@@ -14,11 +14,11 @@ router.get('/', (req, res, next) => {
 router.get('/profile', isLoggedIn, async (req, res) => {
   try {
     const user = req.session.currentUser;
-    const profileInfo = await User.findById(user._id).populate(
-      'favoriteLeisure',
-      'favoriteCulture'
-      //'favoriteFooddrink'
-    );
+    let profileInfo = await User.findById(user._id)
+      .populate('favoriteLeisure')
+      .populate('favoriteCulture')
+      .populate('favoriteFooddrink');
+
     console.log(profileInfo);
     res.render('profile', profileInfo);
   } catch (error) {

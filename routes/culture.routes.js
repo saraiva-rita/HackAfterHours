@@ -92,7 +92,7 @@ router.post('/review/culture/:cultureId', async (req, res) => {
 });
 // the :cultureId is going to wait for a value, is a parameter
 
-router.post('/review/delete/:reviewId', async (req, res) => {
+router.post('/review/culturedelete/:reviewId', async (req, res) => {
   const { reviewId } = req.params;
   try {
     const removedReview = await Review.findByIdAndRemove(reviewId);
