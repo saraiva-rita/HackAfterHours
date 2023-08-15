@@ -10,6 +10,10 @@ const fooddrinkSchema = new Schema(
       type: String,
       required: true,
     },
+    miniDescription: {
+      type: String,
+      required: true,
+    },
     description: {
       type: String,
       required: true,

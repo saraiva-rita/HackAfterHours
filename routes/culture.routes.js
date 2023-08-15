@@ -48,11 +48,6 @@ router.post('/cultureSpots/addFavs/:cultureId/', isLoggedIn, async (req, res, ne
   const currentUser = req.session.currentUser;
   try {    
     const user = await User.findById(currentUser._id);  
-    /*if (user.favoriteCulture.includes(cultureId)){
-      console.log("its already in your favorite list")
-      res.redirect(`/cultureSpots/${cultureId}`);
-      return;
-    } else {*/
     const favSpot = await User.findByIdAndUpdate(currentUser._id, {$push: { favoriteCulture: cultureId }});
     res.redirect(`/cultureSpots/${cultureId}`);
     } catch (error) {
