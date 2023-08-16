@@ -17,16 +17,16 @@ const leisureSpots = [
     Set amongst original features and amazing local artwork, you can start with a natural light course and then straight to the UV Neon light 9 holes that will add the element of competition to even the best minigolfer! 
     `,
     spotUrl: 'https://minigolflisbon.com/',
-    imgUrl: '',
+    imgUrl: 'xx',
     schedule: 'Every Day: 12:00 - 23:00',
   },
   {
     name: 'Rent a Fun - Electric bike tours',
     address: 'Praça do Comércio, 1100-104 Lisboa',
-    miniDescription: '',
-    description: ``,
+    miniDescription: 'xx',
+    description: `xx`,
     spotUrl: 'https://www.rent-a-fun.com/',
-    imgUrl: '',
+    imgUrl: 'xx',
     schedule: '12:00 - 23:00',
   },
   {
@@ -39,7 +39,7 @@ const leisureSpots = [
     How did all this awesomeness come about? Escape Hunt began life in 2013 when they opened their first branch in Bangkok. Inspired by great online computer games such as Myst and Crimson Room,they created something utterly different but equally compelling. As a world leading investor in Researching and Developing advanced technology in this emerging sector, Escape Hunt continually strives to push the boundaries of scientific and technological advances, to offer cutting edge gaming experiences. The result is a truly immersive gaming experience where Escape Hunters are transported to another era to solve a mind-twisting mystery created by Escape Hunt Studios.
     `,
     spotUrl: 'https://escapehunt.com/pt/lisbon/',
-    imgUrl: '',
+    imgUrl: 'xx',
     schedule: '10:00 - 20:00',
   },
   {
@@ -52,7 +52,7 @@ const leisureSpots = [
     Their therapeutic and spiritual work is personalized because each client has different needs at each level of their life. They don’t work with protocols; instead, they aim to be sensitive and guide the client towards their balance.
     `,
     spotUrl: 'https://www.terraheal.com/centro-massagem-lisboa.html',
-    imgUrl: '',
+    imgUrl: 'xx',
     schedule: '10:00 - 22:00',
   },
   {
@@ -61,7 +61,7 @@ const leisureSpots = [
       'Rua Aurea, N° 260, 1100-062 Lisbon & Rua dos Fanqueiros, Nº 110,1100-404 Lisbon',
     miniDescription:
       'Feel special, Health and Wellness, a center created for you',
-    description: ``,
+    description: `xx`,
     spotUrl: 'https://www.ecomassage.com/',
     imgUrl: '',
     schedule: '10:00 - 22:00',
@@ -73,7 +73,7 @@ const leisureSpots = [
     This recently opened space includes a shop on the ground floor and three tasting rooms on the first floor. There are 15 wines available to try in the tasting room, starting at 5 euros.
     Among these are icons such as Taylor’s Vintage 1994 (33€) or Taylor’s Quinta de Vargellas Vintage 2015 (11€). For those who wish to broaden their knowledge, we suggest the ‘Introduction to Taylor’s”, a tasting of 5 wines which define the profile and style of our Port wines: Taylor’s Chip Dry, Taylor’s LBV, Taylor’s 20 Year Old Tawny Port, Taylor’s Quinta de Vargellas Vintage 2015 and Taylor’s Vintage 2007.
     Besides Port, you can also try our award winning olive oil, produced  at our flagship property, Quinta de Vargellas, served with bread (8€). Appetisers include a selection of Portuguese cheeses (15€), Portuguese cured hams (14€) and traditional grilled almonds (4.5 €). Among the sweet pairings, one can try dark chocolate truffles (5€) or the famous Portuguese custard pastry (1,5€), and during the Summer months why not try a signature Port cocktail, Taylor’s Chip Dry and Tonic (6€).`,
-    description: ``,
+    description: `xx`,
     spotUrl: 'https://www.taylor.pt/en/visit-taylors/port-cellars',
     imgUrl: '',
     schedule: '11:00 - 19:00',
@@ -92,7 +92,7 @@ const leisureSpots = [
   {
     name: 'Chiado Training Club',
     address: 'Rua Vitor Cordon, 43, 1200-483 Lisboa',
-    miniDescription: '',
+    miniDescription: 'xx',
     description: `Chiado Training Club is a training studio and an urban, private and elegant refuge, where students can train with a team of highly qualified trainers, who develop training programs focused on individual goals.`,
     spotUrl: 'http://www.chiadotrainingclub.com/',
     imgUrl: '',

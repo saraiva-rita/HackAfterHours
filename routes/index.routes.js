@@ -18,7 +18,9 @@ router.get('/profile', isLoggedIn, async (req, res) => {
       .populate('favoriteLeisure')
       .populate('favoriteCulture')
       .populate('favoriteFooddrink')
-      .populate('review');
+      .populate('reviewCulture')
+      .populate('reviewLeisure')
+      .populate('reviewFooddrink');
 
     res.render('profile', profileInfo);
   } catch (error) {

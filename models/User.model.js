@@ -20,7 +20,19 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    review: [
+    reviewCulture: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Review',
+      },
+    ],
+    reviewFooddrink: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Review',
+      },
+    ],
+    reviewLeisure: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Review',

@@ -12,8 +12,8 @@ const cultureSpots = [
   {
     name: 'Museu do Fado',
     address: 'Alfama, Largo do Chafariz de Dentro 1, 1100-139 Lisboa',
-    miniDescription: '',
-    description: ``,
+    miniDescription: 'xx',
+    description: `xx`,
     spotUrl: 'http://www.museudofado.pt/',
     imgUrl: 'xx',
     schedule: 'xx',

@@ -47,33 +47,42 @@ router.get('/fooddrinkSpots/:fooddrinkId', isLoggedIn, async (req, res) => {
 });
 
 // FAVORITES SPOTS Actions
-router.post('/fooddrinkSpots/addFavs/:fooddrinkId/', isLoggedIn, async (req, res, next) => {
-  const { fooddrinkId } = req.params;
-  const currentUser = req.session.currentUser;
-  try {    
-    const user = await User.findById(currentUser._id);  
-    const favSpot = await User.findByIdAndUpdate(currentUser._id, {$push: { favoriteFooddrink: fooddrinkId }});
-    res.redirect(`/fooddrinkSpots/${fooddrinkId}`);
-    
-  } catch (error) {
-    console.log(error);
+router.post(
+  '/fooddrinkSpots/addFavs/:fooddrinkId/',
+  isLoggedIn,
+  async (req, res, next) => {
+    const { fooddrinkId } = req.params;
+    const currentUser = req.session.currentUser;
+    try {
+      const user = await User.findById(currentUser._id);
+      const favSpot = await User.findByIdAndUpdate(currentUser._id, {
+        $push: { favoriteFooddrink: fooddrinkId },
+      });
+      res.redirect(`/fooddrinkSpots/${fooddrinkId}`);
+    } catch (error) {
+      console.log(error);
+    }
   }
-});
+);
 
 // Remove favorite from profile
-router.post('/fooddrinkSpots/removeFavs/:fooddrinkId/', isLoggedIn, async (req, res, next) => {
-  const { fooddrinkId } = req.params;
-  const currentUser = req.session.currentUser;
-  try {
-    const user = await User.findById(currentUser._id);  
-    const favSpot = await User.findByIdAndUpdate(currentUser._id, {$pull: { favoriteFooddrink: fooddrinkId }});
-    res.redirect(`/profile`);
-    
-  } catch (error) {
-    console.log(error);
+router.post(
+  '/fooddrinkSpots/removeFavs/:fooddrinkId/',
+  isLoggedIn,
+  async (req, res, next) => {
+    const { fooddrinkId } = req.params;
+    const currentUser = req.session.currentUser;
+    try {
+      const user = await User.findById(currentUser._id);
+      const favSpot = await User.findByIdAndUpdate(currentUser._id, {
+        $pull: { favoriteFooddrink: fooddrinkId },
+      });
+      res.redirect(`/profile`);
+    } catch (error) {
+      console.log(error);
+    }
   }
-});
-
+);
 
 // REVIEWS ACTIONS
 router.post('/review/fooddrink/:fooddrinkId', async (req, res) => {
@@ -94,7 +103,7 @@ router.post('/review/fooddrink/:fooddrinkId', async (req, res) => {
 
     // add the review to the user
     const userUpdate = await User.findByIdAndUpdate(user._id, {
-      $push: { review: newReview._id },
+      $push: { reviewFooddrink: newReview._id },
     });
     res.redirect(`/fooddrinkSpots/${fooddrinkId}`);
   } catch (error) {
@@ -103,22 +112,30 @@ router.post('/review/fooddrink/:fooddrinkId', async (req, res) => {
 });
 // REVIEWS DELETE
 
-router.post('/:reviewId/fooddrink-delete/:fooddrinkId', isLoggedIn, async (req, res) => {
-  const {fooddrinkId, reviewId} = req.params;
-  const user = req.session.currentUser;
-  
-  try {
-    await Review.findByIdAndRemove(reviewId);
+router.post(
+  '/:reviewId/fooddrink-delete/:fooddrinkId',
+  isLoggedIn,
+  async (req, res) => {
+    const { fooddrinkId, reviewId } = req.params;
+    const user = req.session.currentUser;
 
-    // update the Food'n'Drinks Spot after remove the review
-    await Fooddrink.findByIdAndUpdate(fooddrinkId, {$pull: { reviews: reviewId }});
+    try {
+      await Review.findByIdAndRemove(reviewId);
 
-    // remove the review from the user
-    await User.findByIdAndUpdate(user._id, {$pull: { review: reviewId }});
-      res.redirect(`/fooddrinkSpots/${fooddrinkId}`);
-  } catch (error) {
+      // update the Food'n'Drinks Spot after remove the review
+      await Fooddrink.findByIdAndUpdate(fooddrinkId, {
+        $pull: { reviews: reviewId },
+      });
+
+      // remove the review from the user
+      await User.findByIdAndUpdate(user._id, {
+        $pull: { reviewFooddrink: reviewId },
+      });
+      res.redirect(`/profile`);
+    } catch (error) {
       console.log(error);
+    }
   }
-});
+);
 
 module.exports = router;

@@ -28,8 +28,26 @@
 <br>
 <hr />
 <h2>Personal reviews</h2>
-{{#each review}}
-  <p>{{content}}</p>
+{{#each reviewCulture}}
+  <p>{{this.content}}</p>
+  <!-- Deleting the Review -->
+    <form action='/{{_id}}/culture-delete/{{../_id}}' method='post'>
+      <button type='submit'>Delete</button>
+    </form>
+{{/each}}
+{{#each reviewLeisure}}
+  <p>{{this.content}}</p>
+  <!-- Deleting the Review -->
+    <form action='/{{_id}}/leisure-delete/{{../_id}}' method='post'>
+      <button type='submit'>Delete</button>
+    </form>
+{{/each}}
+{{#each reviewFooddrink}}
+  <p>{{this.content}}</p>
+  <!-- Deleting the Review -->
+    <form action='/{{_id}}/fooddrink-delete/{{../_id}}' method='post'>
+      <button type='submit'>Delete</button>
+    </form>
 {{/each}}
 <hr />
 <br>
