@@ -17,6 +17,10 @@ router.get('/index', (req, res, next) => {
 router.get('/about', (req, res, next) => {
   res.render('about');
 });
+/* GET Contacts */
+router.get('/contacts', (req, res, next) => {
+  res.render('contacts');
+});
 
 /* USER PROFILE */
 router.get('/profile', isLoggedIn, async (req, res) => {

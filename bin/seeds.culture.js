@@ -123,8 +123,9 @@ const cultureSpots = [
   {
     name: 'Chafariz de El-Rei',
     address: 'R. Cais de Santarém 23, 1100-603 Lisbon',
-    miniDescription: `The Chafariz de El-Rei is a historic fountain in Lisbon, Portugal, dating back to the 13th century. It served as a crucial water supply source for the city and is known for its classic architectural design. Situated near the main gate, it played a role in public gatherings and symbolizes Lisbon's history and resilience. Today, it remains a cultural landmark and tourist attraction, showcasing the city's heritage and importance of public spaces.`,
+    miniDescription: `The Chafariz de El-Rei is a historic fountain in Lisbon, Portugal, dating back to the 13th century.`,
     description: `The Chafariz de El-Rei, also known as the King's Fountain, is a historic fountain located in Lisbon, Portugal. It holds cultural and architectural significance, representing an important element of the city's heritage.
+    It served as a crucial water supply source for the city and is known for its classic architectural design. Situated near the main gate, it played a role in public gatherings and symbolizes Lisbon's history and resilience. Today, it remains a cultural landmark and tourist attraction, showcasing the city's heritage and importance of public spaces.
 
     Key features:
     

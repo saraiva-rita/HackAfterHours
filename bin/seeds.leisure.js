@@ -49,8 +49,7 @@ const leisureSpots = [
       'Terra Heal is a project created to help people achieve better health at all levels.',
     description: `Terra Heal is a project created to help people achieve better health at all levels. It is a concept of massages & holistic therapies based in Lisbon, designed on the principle that self-care is a necessity, not a luxury, and crafted to serve as an oasis for today's digital society.The goal is to offer high-quality massages and holistic therapies at affordable prices in a welcoming environment.
 
-    Their therapeutic and spiritual work is personalized because each client has different needs at each level of their life. They don’t work with protocols; instead, they aim to be sensitive and guide the client towards their balance.
-    `,
+    Their therapeutic and spiritual work is personalized because each client has different needs at each level of their life. They don’t work with protocols; instead, they aim to be sensitive and guide the client towards their balance.`,
     spotUrl: 'https://www.terraheal.com/centro-massagem-lisboa.html',
     imgUrl: 'xx',
     schedule: '10:00 - 22:00',

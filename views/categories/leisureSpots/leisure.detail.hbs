@@ -1,45 +1,96 @@
-<h1>{{foundLeisureSpot.name}}</h1>
+<aside class='sidebar'>
+  <div class='logo'>
+    <img src='/images/ironhack-symbol.png' alt='logo' />
+    <h2>Hack AfterHours</h2>
+  </div>
+  <ul class='links'>
+    <h4>Home</h4>
+    <li>
+      <span class='material-symbols-outlined'>dashboard</span>
+      <a href='/about'>About</a>
+    </li>
+    <li>
+      <span class='material-symbols-outlined'>share</span>
+      <a href='/contacts'>Contacts</a>
+    </li>
+    <hr />
+    <h4>Categories</h4>
+    <li>
+      <span class='material-symbols-outlined'>church</span>
+      <a href='/cultureSpots'>Culture Spots</a>
+    </li>
+    <li>
+      <span class='material-symbols-outlined'>fastfood</span>
+      <a href='/fooddrinkSpots'>Food and Drink Spots</a>
+    </li>
+    <li>
+      <span class='material-symbols-outlined'>water_lux</span>
+      <a href='/leisureSpots'>Leisure Spots</a>
+    </li>
+    <hr />
+    <h4>My Account</h4>
+    <li>
+      <span class='material-symbols-outlined'>person</span>
+      <a href='/profile'>My Profile</a>
+    </li>
+    <li>
+      <span class='material-symbols-outlined'>person_add</span>
+      <a href='/auth/signup'>Signup</a>
+    </li>
+    <li>
+      <span class='material-symbols-outlined'>login</span>
+      <a href='/auth/login'>Login</a>
+    </li>
+    <li class='logout-link'>
+      <span class='material-symbols-outlined'>logout</span>
+      <a href='/auth/logout'>Logout</a>
+    </li>
+  </ul>
+</aside>
+
+<h2>{{foundLeisureSpot.name}}</h2>
 <br />
 <p>Description: {{foundLeisureSpot.description}}</p>
 <p>Address: {{foundLeisureSpot.address}}</p>
-<p>Website: <a href={{foundLeisureSpot.spotUrl}}>{{foundLeisureSpot.spotUrl}}</a></p>
+<p>Website:
+  <a href={{foundLeisureSpot.spotUrl}}>{{foundLeisureSpot.spotUrl}}</a></p>
 <p>Schedule: {{foundLeisureSpot.schedule}}</p>
 
 {{#if isFav}}
   <form
-    action="/leisureSpots/removeFavs/{{foundLeisureSpot._id}}"
-    method="post"
+    action='/leisureSpots/removeFavs/{{foundLeisureSpot._id}}'
+    method='post'
   >
-    <button type="submit">
+    <button type='submit'>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
-        class="bi bi-heart-fill"
-        viewBox="0 0 16 16"
+        xmlns='http://www.w3.org/2000/svg'
+        width='16'
+        height='16'
+        fill='currentColor'
+        class='bi bi-heart-fill'
+        viewBox='0 0 16 16'
       >
         <path
-          fill-rule="evenodd"
-          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+          fill-rule='evenodd'
+          d='M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z'
         />
       </svg>
     </button>
   </form>
 {{else}}
 
-  <form action="/leisureSpots/addFavs/{{foundLeisureSpot._id}}" method="post">
-    <button type="submit">
+  <form action='/leisureSpots/addFavs/{{foundLeisureSpot._id}}' method='post'>
+    <button type='submit'>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
-        class="bi bi-heart"
-        viewBox="0 0 16 16"
+        xmlns='http://www.w3.org/2000/svg'
+        width='16'
+        height='16'
+        fill='currentColor'
+        class='bi bi-heart'
+        viewBox='0 0 16 16'
       >
         <path
-          d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+          d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z'
         />
       </svg>
     </button>
@@ -50,8 +101,6 @@
 <h4>Leave a Review!</h4>
 <!-- Form to Create a Review -->
 <form action='/review/leisure/{{foundLeisureSpot._id}}' method='post'>
-
-  <label for='content'>Content of the Review</label>
   <textarea
     name='content'
     id='content'
