@@ -17,7 +17,8 @@ router.get('/profile', isLoggedIn, async (req, res) => {
     let profileInfo = await User.findById(user._id)
       .populate('favoriteLeisure')
       .populate('favoriteCulture')
-      .populate('favoriteFooddrink');
+      .populate('favoriteFooddrink')
+      .populate('review');
 
     res.render('profile', profileInfo);
   } catch (error) {

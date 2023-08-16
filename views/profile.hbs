@@ -4,7 +4,7 @@
 <br />
 <h2>{{email}}</h2>
 <hr />
-<br>
+<h2>Favorite places</h2>
 {{#each favoriteLeisure}}
   <p>{{this.name}}</p>
   <form action="/leisureSpots/removeFavs/{{_id}}" method="post">
@@ -25,5 +25,12 @@
     <button type="submit">Delete</button>
   </form>
 {{/each}}
-
+<br>
+<hr />
+<h2>Personal reviews</h2>
+{{#each review}}
+  <p>{{content}}</p>
+{{/each}}
+<hr />
+<br>
 <a href='/'>Return to main menu</a>

@@ -52,13 +52,9 @@ router.post('/fooddrinkSpots/addFavs/:fooddrinkId/', isLoggedIn, async (req, res
   const currentUser = req.session.currentUser;
   try {    
     const user = await User.findById(currentUser._id);  
-    /*if (user.favoriteFooddrink.includes(fooddrinkId)){
-      console.log("its already in your favorite list")
-      res.redirect(`/fooddrinkSpots/${fooddrinkId}`);
-      return;
-    } else {*/
     const favSpot = await User.findByIdAndUpdate(currentUser._id, {$push: { favoriteFooddrink: fooddrinkId }});
     res.redirect(`/fooddrinkSpots/${fooddrinkId}`);
+    
   } catch (error) {
     console.log(error);
   }

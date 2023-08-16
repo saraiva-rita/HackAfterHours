@@ -12,7 +12,7 @@ const fooddrinkSpots = [
   {
     name: 'O Cofre',
     address: 'R. dos Bacalhoeiros 2, 1100-069 Lisboa',
-    miniDescription: '',
+    miniDescription: 'xx',
     description:
       'Restaurant in a great location with a wide selection of food and drinks.',
     spotUrl: 'http://ocofre.eatbu.com/',
@@ -50,7 +50,7 @@ const fooddrinkSpots = [
   {
     name: 'Nosolo Italia',
     address: 'Av. 24 de Julho 49, 1200-479 Lisboa',
-    miniDescription: '',
+    miniDescription: 'xx',
     description:
       'A food hall located in the Ribeira Market in Cais do Sodré.The concept aims to bring together under one roof the best chefs, restaurants, and culinary projects in the Portuguese capital, based on recommendations from Time Out magazine critics and contributors.',
     spotUrl: 'https://www.timeoutmarket.com/lisboa/',
@@ -60,7 +60,7 @@ const fooddrinkSpots = [
   {
     name: 'Basilio',
     address: 'Rua dos Bacalhoeiros, 111, 1100-068 Lisboa',
-    miniDescription: '',
+    miniDescription: 'xx',
     description: `Basílio, the cousin of Nicolau: His stubbornness and courage cut Amazonian savannahs and opened the way for the Holy Grail of Brazil: the coffee.
 
     Basílio, a playful and temperamental entrepreneur became one of the greatest coffee barons of the 19th century and when the coffee cycle grew, the independence of Basílio jumped out and he took a chance in his own farm. He challenged his cousin Nicolau and they prosper together with the export of coffee to all the European capitals. But the homesickness beat strongly and Basílio returned, has become a bohemian and “bon vivant” of Lisbon but always near his cousin.
@@ -74,7 +74,7 @@ const fooddrinkSpots = [
   {
     name: 'Nicolau',
     address: 'Rua dos Bacalhoeiros, 111, 1100-068 Lisboa',
-    miniDescription: '',
+    miniDescription: 'xx',
     description: `We are told that when he arrived, nor the Lisbon girl and child has resisted him:  Nicolau, the proud aristocrat with German blood (but Latin good talking) grew and became a reference of the capital.
 
     The curious and brave “engaging of the downtown” travelled the world (and many Lisbon princesses) but it was from Brazil that he brought the smells and tastes he shares with passion for food to whom enters in his café.
@@ -109,8 +109,8 @@ const fooddrinkSpots = [
     name: 'Istanbul',
     address: 'Rua do Comércio 2, 22, 1100-016 Lisboa',
     miniDescription: 'Turkish restaurant',
-    description: ``,
-    spotUrl: '',
+    description: `xx`,
+    spotUrl: 'xx',
     imgUrl: 'xx',
     schedule: '10:00 - 01:30',
   },
@@ -118,7 +118,7 @@ const fooddrinkSpots = [
     name: 'Potato Project',
     address: 'Rua do Comércio 2, 22, 1100-016 Lisboa',
     miniDescription: 'Turkish restaurant',
-    description: ``,
+    description: `xx`,
     spotUrl: 'https://www.potatoprojectpt.com',
     imgUrl: 'xx',
     schedule: '10:00 - 01:30',
@@ -176,7 +176,7 @@ const fooddrinkSpots = [
   {
     name: 'Pensão Amor',
     address: 'R. do Alecrim 19, 1200-292 Lisboa',
-    miniDescription: '',
+    miniDescription: 'xx',
     description: `Original? Bold? Burlesque? In Lisbon love is lived and in this space you feel that its originality also celebrates it. Pensão Amor has a bar where there are different shows, whether of burlesque, jazz concerts, plays or DJ. There are even nooks and crannies for those who are more shy, tasty cocktails, conversations and different entertainment every day.
 
     The theme is inviting, as is the uniqueness of the atmosphere. What was once a rundown boarding house, is now a space worthy of watching a burlesque show, having one of its signature cocktails or simply hanging out with friends. Go to Pensão Amor, discover its corners with your friends, boyfriend/girlfriend, alone... here you will be greeted with the smile of open minds, which gave the city of Lisbon and this old building – a new life, based on the original idea.`,
@@ -187,7 +187,7 @@ const fooddrinkSpots = [
   {
     name: 'Confeitaria Nacional',
     address: 'Praça da Figueira, 18 B',
-    miniDescription: '',
+    miniDescription: 'xx',
     description: `Confeitaria Nacional was founded in 1829 by Balthazar Roiz Castanheiro.
     In 1829, the population of Portugal (metropolis) was just over 3 million.
     There was a troubled period in Portugal – which was in the middle of the Civil War, fought between liberals and absolutists – at stake was the respect for the rules of succession to the Portuguese throne.
@@ -224,7 +224,7 @@ const fooddrinkSpots = [
     address: 'Cais da Ribeira Nova, Armazém B Cais do Sodré, Lisboa',
     miniDescription:
       'Boteco da Dri is the new Brazilian restaurant in Cais do Sodré and serves until late.',
-    description: ``,
+    description: `xxx`,
     spotUrl: 'https://www.facebook.com/botecodadri/?locale=pt_BR',
     imgUrl: 'xx',
     schedule: '18:00 - 00:00',
@@ -244,7 +244,7 @@ const fooddrinkSpots = [
     address: 'Rua de S. Paulo 79, 1200-427 Lisboa',
     miniDescription:
       'Unassuming mainstay turning out Italian-style pizzas, Basque burnt cheesecake & natural wines.',
-    description: `T`,
+    description: `xxx`,
     spotUrl: 'https://www.facebook.com/lupita.pizzaria/',
     imgUrl: 'xx',
     schedule: '12:00 - 15:00; 18:00 - 23:30',
