@@ -1,4 +1,5 @@
-<div id='spots-cards'>
+{{!-- Side Navbar --}}
+<div id='spots-cards' class="wrapper">
   <aside class="sidebar">
       <div class="logo">
         <img src="/images/ironhack-symbol.png" alt="logo">
@@ -49,27 +50,32 @@
       </ul>
     </aside>
   <br />
+
+  <div class="spots-question">
+    <h2>What do you feel like doing?</h2>
+  </div>
+  
+  {{!-- Spots Cards --}}
   <div id="main-cards">
-    <div class='card' style='width: 18rem;'>
+    <div class='card'>
     <a href='/cultureSpots'><img src='../images/foodNdrink.jpg' class='card-img-top' alt='...' /></a>   
     <div class='card-body'>
       <h5 class='card-title'>Culture Spots</h5>
-      <a href='/cultureSpots'>See More</a>
+      <a class="button" href='/cultureSpots'>See More</a>
     </div>
   </div>
-  <div class='card' style='width: 18rem;'>
+  <div class='card'>
     <a href='/fooddrinkSpots'><img src='../images/foodNdrink.jpg' class='card-img-top' alt='...' /></a>
     <div class='card-body'>
       <h5 class='card-title'>Food and Drink</h5>
-      <a href='/fooddrinkSpots'>See More</a>
+      <a class="button" href='/fooddrinkSpots'>See More</a>
     </div>
   </div>
-  <div class='card' style='width: 18rem;'>
+  <div class='card'>
     <a href='/leisureSpots'><img src='../images/foodNdrink.jpg' class='card-img-top' alt='...' /></a>
     <div class='card-body'>
       <h5 class='card-title'>Leisure Spots</h5>
-       <a href='/leisureSpots'>See More</a>
-    </div>
-    
+       <a class="button" href='/leisureSpots'>See More</a>
+    </div>    
   </div>  
 </div>
