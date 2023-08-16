@@ -1,9 +1,33 @@
 <div id='landing-page'>
+  <button id='button-music-on-off'></button>
+  <video autoplay loop muted plays-inline class='back-video'>
+    <source src='../videos/lisbon.mp4' type='video/mp4' />
+  </video>
+  <audio id='introMusic' loop autoplay>
+    <source src='../videos/music.wav' type='audio/wav' />
+    Your browser does not support the audio element.
+  </audio>
 
-  <h1>HACK AFTERHOURS</h1>
-  <br />
-  <div>
+  <div class='landing-content'>
+    <h1>Hack Afterhours</h1>
+    <br />
+    <p>catchy catchy phrase</p>
+    <br />
     <button class='find-more'><a href='/index'>Explore</a>
     </button>
   </div>
 </div>
+
+<script>
+  window.onload = function(){ const buttonMusicOnOff =
+  document.getElementById("button-music-on-off"); const introMusic =
+  document.getElementById("introMusic"); let isMusicPlaying = true; function
+  toggleMusic(){ if (isMusicPlaying){ introMusic.pause();
+  buttonMusicOnOff.style.backgroundImage =
+  "url('https://i.ibb.co/dbbYn9V/mute.png')"; } else { introMusic.play();
+  buttonMusicOnOff.style.backgroundImage
+  ="url('https://i.ibb.co/BBYZvy0/music-on-off.png')"; } isMusicPlaying =
+  !isMusicPlaying; }
+  document.getElementById("button-music-on-off").addEventListener("click",
+  toggleMusic); }
+</script>

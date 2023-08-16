@@ -5,13 +5,17 @@ const router = express.Router();
 const isLoggedIn = require('../middleware/isLoggedIn');
 const User = require('../models/User.model');
 
-/* GET home page */
+/* GET Landing Page */
 router.get('/', (req, res, next) => {
   res.render('landingpage');
 });
 /* GET home page */
 router.get('/index', (req, res, next) => {
   res.render('index');
+});
+/* GET About */
+router.get('/about', (req, res, next) => {
+  res.render('about');
 });
 
 /* USER PROFILE */
