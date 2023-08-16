@@ -69,11 +69,11 @@ const leisureSpots = [
   {
     name: `Taylor's Port - Wine Shop & Tasting Room`,
     address: 'R. Cais de Santarém 8, 1100-104 Lisbon',
-    miniDescription: `Located in a prestigious area within the historic district of Alfama, next to Chafariz del Rei, the first ever public fountain in Lisbon dating back to 1487, Taylor’s Port wine shop and tasting room showcases a wide range of our Ports and is the first of its kind in Lisbon.
+    miniDescription: `xx`,
+    description: `Located in a prestigious area within the historic district of Alfama, next to Chafariz del Rei, the first ever public fountain in Lisbon dating back to 1487, Taylor’s Port wine shop and tasting room showcases a wide range of our Ports and is the first of its kind in Lisbon.
     This recently opened space includes a shop on the ground floor and three tasting rooms on the first floor. There are 15 wines available to try in the tasting room, starting at 5 euros.
     Among these are icons such as Taylor’s Vintage 1994 (33€) or Taylor’s Quinta de Vargellas Vintage 2015 (11€). For those who wish to broaden their knowledge, we suggest the ‘Introduction to Taylor’s”, a tasting of 5 wines which define the profile and style of our Port wines: Taylor’s Chip Dry, Taylor’s LBV, Taylor’s 20 Year Old Tawny Port, Taylor’s Quinta de Vargellas Vintage 2015 and Taylor’s Vintage 2007.
     Besides Port, you can also try our award winning olive oil, produced  at our flagship property, Quinta de Vargellas, served with bread (8€). Appetisers include a selection of Portuguese cheeses (15€), Portuguese cured hams (14€) and traditional grilled almonds (4.5 €). Among the sweet pairings, one can try dark chocolate truffles (5€) or the famous Portuguese custard pastry (1,5€), and during the Summer months why not try a signature Port cocktail, Taylor’s Chip Dry and Tonic (6€).`,
-    description: `xx`,
     spotUrl: 'https://www.taylor.pt/en/visit-taylors/port-cellars',
     imgUrl: '',
     schedule: '11:00 - 19:00',

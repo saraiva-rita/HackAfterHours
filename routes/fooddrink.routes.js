@@ -25,6 +25,13 @@ router.get('/fooddrinkSpots/:fooddrinkId', isLoggedIn, async (req, res) => {
   try {
     //ES6 Object Destructuring with fooddrinkId route param
     const { fooddrinkId } = req.params;
+    let isFav;
+    const currentUser = req.session.currentUser;
+
+    const thisUser = await User.findById(currentUser._id);
+    if (thisUser.favoriteFooddrink.includes(`${fooddrinkId}`)) {
+      isFav = true;
+    }
 
     // Find Food and Drink Spot via its Id inside the Database
     let foundFooddrinkSpot = await Fooddrink.findById(fooddrinkId);
@@ -37,10 +44,10 @@ router.get('/fooddrinkSpots/:fooddrinkId', isLoggedIn, async (req, res) => {
       },
     });
 
-    res.render(
-      'categories/fooddrinkSpots/foodndrink.detail.hbs',
-      foundFooddrinkSpot
-    );
+    res.render('categories/fooddrinkSpots/foodndrink.detail.hbs', {
+      foundFooddrinkSpot,
+      isFav,
+    });
   } catch (error) {
     console.log(error);
   }
@@ -54,7 +61,6 @@ router.post(
     const { fooddrinkId } = req.params;
     const currentUser = req.session.currentUser;
     try {
-      const user = await User.findById(currentUser._id);
       const favSpot = await User.findByIdAndUpdate(currentUser._id, {
         $push: { favoriteFooddrink: fooddrinkId },
       });
@@ -65,9 +71,28 @@ router.post(
   }
 );
 
-// Remove favorite from profile
+// Remove favorite from food'n'drink spot detail
 router.post(
   '/fooddrinkSpots/removeFavs/:fooddrinkId/',
+  isLoggedIn,
+  async (req, res, next) => {
+    const { fooddrinkId } = req.params;
+    const currentUser = req.session.currentUser;
+    try {
+      const user = await User.findById(currentUser._id);
+      const favSpot = await User.findByIdAndUpdate(currentUser._id, {
+        $pull: { favoriteFooddrink: fooddrinkId },
+      });
+      res.redirect(`/fooddrinkSpots/${fooddrinkId}`);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+// Remove favorite from profile
+router.post(
+  '/profile/removeFavs/:fooddrinkId/',
   isLoggedIn,
   async (req, res, next) => {
     const { fooddrinkId } = req.params;
@@ -84,7 +109,7 @@ router.post(
   }
 );
 
-// REVIEWS ACTIONS
+// ADD REVIEWS
 router.post('/review/fooddrink/:fooddrinkId', async (req, res) => {
   try {
     const { fooddrinkId } = req.params;
@@ -110,8 +135,8 @@ router.post('/review/fooddrink/:fooddrinkId', async (req, res) => {
     console.log(error);
   }
 });
-// REVIEWS DELETE
 
+// REVIEWS DELETE
 router.post(
   '/:reviewId/fooddrink-delete/:fooddrinkId',
   isLoggedIn,
@@ -131,7 +156,7 @@ router.post(
       await User.findByIdAndUpdate(user._id, {
         $pull: { reviewFooddrink: reviewId },
       });
-      res.redirect(`/profile`);
+      res.redirect(`/fooddrinkSpots/${fooddrinkId}`);
     } catch (error) {
       console.log(error);
     }

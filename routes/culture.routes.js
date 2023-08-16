@@ -25,6 +25,13 @@ router.get('/cultureSpots/:cultureId', isLoggedIn, async (req, res) => {
   try {
     //ES6 Object Destructuring with cultureId route param
     const { cultureId } = req.params;
+    let isFav;
+    const currentUser = req.session.currentUser;
+
+    const thisUser = await User.findById(currentUser._id);
+    if (thisUser.favoriteCulture.includes(`${cultureId}`)) {
+      isFav = true;
+    }
 
     // Find Culture Spot via its Id inside the Database
     let foundCultureSpot = await Culture.findById(cultureId);
@@ -38,7 +45,10 @@ router.get('/cultureSpots/:cultureId', isLoggedIn, async (req, res) => {
       },
     });
 
-    res.render('categories/cultureSpots/culture.detail.hbs', foundCultureSpot);
+    res.render('categories/cultureSpots/culture.detail.hbs', {
+      foundCultureSpot,
+      isFav,
+    });
   } catch (error) {
     console.log(error);
   }
@@ -51,10 +61,31 @@ router.post(
   async (req, res, next) => {
     const { cultureId } = req.params;
     const currentUser = req.session.currentUser;
+
     try {
       const user = await User.findById(currentUser._id);
       const favSpot = await User.findByIdAndUpdate(currentUser._id, {
         $push: { favoriteCulture: cultureId },
+      });
+
+      res.redirect(`/cultureSpots/${cultureId}`);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+// Remove favorite from culture spot detail
+router.post(
+  '/cultureSpots/removeFavs/:cultureId/',
+  isLoggedIn,
+  async (req, res, next) => {
+    const { cultureId } = req.params;
+    const currentUser = req.session.currentUser;
+    try {
+      const user = await User.findById(currentUser._id);
+      const favSpot = await User.findByIdAndUpdate(currentUser._id, {
+        $pull: { favoriteCulture: cultureId },
       });
       res.redirect(`/cultureSpots/${cultureId}`);
     } catch (error) {
@@ -65,7 +96,7 @@ router.post(
 
 // Remove favorite from profile
 router.post(
-  '/cultureSpots/removeFavs/:cultureId/',
+  '/profile/removeFavs/:cultureId/',
   isLoggedIn,
   async (req, res, next) => {
     const { cultureId } = req.params;
@@ -82,7 +113,7 @@ router.post(
   }
 );
 
-// REVIEWS ACTIONS
+// ADD REVIEWS
 router.post('/review/culture/:cultureId', async (req, res) => {
   try {
     const { cultureId } = req.params;

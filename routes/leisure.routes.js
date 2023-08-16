@@ -25,6 +25,13 @@ router.get('/leisureSpots/:leisureId', isLoggedIn, async (req, res) => {
   try {
     //ES6 Object Destructuring with leisureId route param
     const { leisureId } = req.params;
+    let isFav;
+    const currentUser = req.session.currentUser;
+
+    const thisUser = await User.findById(currentUser._id);
+    if (thisUser.favoriteLeisure.includes(`${leisureId}`)) {
+      isFav = true;
+    }
 
     // Find Leisure Spot via its Id inside the Database
     let foundLeisureSpot = await Leisure.findById(leisureId);
@@ -37,7 +44,10 @@ router.get('/leisureSpots/:leisureId', isLoggedIn, async (req, res) => {
       },
     });
 
-    res.render('categories/leisureSpots/leisure.detail.hbs', foundLeisureSpot);
+    res.render('categories/leisureSpots/leisure.detail.hbs', {
+      foundLeisureSpot,
+      isFav,
+    });
   } catch (error) {
     console.log(error);
   }
@@ -51,13 +61,9 @@ router.post(
   async (req, res, next) => {
     const { leisureId } = req.params;
     const currentUser = req.session.currentUser;
+
     try {
       const user = await User.findById(currentUser._id);
-      /*if (user.favoriteLeisure.includes(leisureId)){
-      console.log("its already in your favorite list")
-      res.redirect(`/leisureSpots/${leisureId}`);
-      return;
-    } else {*/
       const favSpot = await User.findByIdAndUpdate(currentUser._id, {
         $push: { favoriteLeisure: leisureId },
       });
@@ -68,9 +74,28 @@ router.post(
   }
 );
 
-// Remove favorite from profile
+// Remove favorite from leisure spot detail
 router.post(
   '/leisureSpots/removeFavs/:leisureId/',
+  isLoggedIn,
+  async (req, res, next) => {
+    const { leisureId } = req.params;
+    const currentUser = req.session.currentUser;
+    try {
+      const user = await User.findById(currentUser._id);
+      const favSpot = await User.findByIdAndUpdate(currentUser._id, {
+        $pull: { favoriteLeisure: leisureId },
+      });
+      res.redirect(`/leisureSpots/${leisureId}`);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+// Remove favorite from profile
+router.post(
+  '/profile/removeFavs/:leisureId/',
   isLoggedIn,
   async (req, res, next) => {
     const { leisureId } = req.params;
@@ -87,13 +112,13 @@ router.post(
   }
 );
 
-// REVIEWS ACTIONS
+// ADD REVIEWS
 router.post('/review/leisure/:leisureId', async (req, res) => {
   try {
     const { leisureId } = req.params;
     const { content } = req.body; // req: info about the request; what was sent through the body
-    const user = req.session.currentUser;
     const newReview = await Review.create({ content });
+    const user = req.session.currentUser;
 
     // update the Leisure Spot with new review that was created
     const leisureUpdate = await Leisure.findByIdAndUpdate(leisureId, {
@@ -114,7 +139,7 @@ router.post('/review/leisure/:leisureId', async (req, res) => {
   }
 });
 
-// REVIEWS DELETE
+// DELETE REVIEW
 router.post(
   '/:reviewId/leisure-delete/:leisureId',
   isLoggedIn,

@@ -1,39 +1,75 @@
-<h1>{{name}}</h1>
+<h1>{{foundCultureSpot.name}}</h1>
 <br />
-<p>Description: {{description}}</p>
-<p>Address: {{address}}</p>
-<p>Website: <a href={{spotUrl}}>{{spotUrl}}</a></p>
-<p>Schedule: {{schedule}}</p>
+<p>Description: {{foundCultureSpot.description}}</p>
+<p>Address: {{foundCultureSpot.address}}</p>
+<p>Website:
+  <a href={{foundCultureSpot.spotUrl}}>{{foundCultureSpot.spotUrl}}</a></p>
+<p>Schedule: {{foundCultureSpot.schedule}}</p>
 
-<form action='/cultureSpots/addFavs/{{_id}}' method='post'><button
-    type='submit'
-  >Add Favorite Spot</button>
-</form>
+{{#if isFav}}
+  <form
+    action="/cultureSpots/removeFavs/{{foundCultureSpot._id}}"
+    method="post"
+  >
+    <button type="submit">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-heart-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+        />
+      </svg>
+    </button>
+  </form>
+{{else}}
+
+  <form action="/cultureSpots/addFavs/{{foundCultureSpot._id}}" method="post">
+    <button type="submit">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-heart"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+        />
+      </svg>
+    </button>
+  </form>
+{{/if}}
 
 <!-- Review Section -->
 <h4>Leave a Review!</h4>
 <!-- Form to Create a Review -->
-<form action='/review/culture/{{_id}}' method='post'>
+<form action="/review/culture/{{foundCultureSpot._id}}" method="post">
 
-  <label for='content'>Content of the Review</label>
+  <label for="content">Content of the Review</label>
   <textarea
-    name='content'
-    id='content'
-    cols='30'
-    rows='5'
-    placeholder='Write your Review here'
+    name="content"
+    id="content"
+    cols="30"
+    rows="5"
+    placeholder="Write your Review here"
   ></textarea>
-  <button type='submit'>Create the review</button>
+  <button type="submit">Create the review</button>
 </form>
 <!-- End of the Form to Create a Review -->
 <br />
 <!-- Display all the Reviews of the Culture Spot that we're seeing -->
-{{#each reviews}}
+{{#each foundCultureSpot.reviews}}
   <div>
     <!-- Actually displaying the review -->
     <p><span>Review Author: {{author.username}}</span> <br />{{content}}</p>
-    
   </div>
 {{/each}}
 <br />
-<a href='/cultureSpots'>Return</a>
+<a href="/cultureSpots">Return</a>

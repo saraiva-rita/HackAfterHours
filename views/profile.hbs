@@ -7,21 +7,21 @@
 <h2>Favorite places</h2>
 {{#each favoriteLeisure}}
   <p>{{this.name}}</p>
-  <form action="/leisureSpots/removeFavs/{{_id}}" method="post">
+  <form action="/profile/removeFavs/{{_id}}" method="post">
     <button type="submit">Delete</button>
   </form>
 {{/each}}
 <br>
 {{#each favoriteFooddrink}}
   <p>{{this.name}}</p>
-    <form action="/fooddrinkSpots/removeFavs/{{_id}}" method="post">
+    <form action="/profile/removeFavs/{{_id}}" method="post">
     <button type="submit">Delete</button>
   </form>
 {{/each}}
 <br>
 {{#each favoriteCulture}}
   <p>{{this.name}}</p>
-    <form action="/cultureSpots/removeFavs/{{_id}}" method="post">
+    <form action="/profile/removeFavs/{{_id}}" method="post">
     <button type="submit">Delete</button>
   </form>
 {{/each}}
