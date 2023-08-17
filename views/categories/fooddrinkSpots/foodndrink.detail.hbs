@@ -2,8 +2,10 @@
   {{! Sidebar }}
   <aside class='sidebar'>
     <div class='logo'>
-      <img src='/images/ironhack-symbol.png' alt='logo' />
-      <h2>Hack AfterHours</h2>
+      <a href='/index'><img
+          src='/images/ironhack-symbol.png'
+          alt='logo'
+        /></a><h2>Hack AfterHours</h2>
     </div>
     <ul class='links'>
       <h4>Home</h4>
@@ -65,7 +67,7 @@
       action='/fooddrinkSpots/removeFavs/{{foundFooddrinkSpot._id}}'
       method='post'
     >
-      <button type='submit'>
+      <button class='fav-button' type='submit'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='16'
@@ -87,7 +89,7 @@
       action='/fooddrinkSpots/addFavs/{{foundFooddrinkSpot._id}}'
       method='post'
     >
-      <button type='submit'>
+      <button class='fav-button' type='submit'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='16'
@@ -103,6 +105,7 @@
       </button>
     </form>
   {{/if}}
+  <img src={{foundFooddrinkSpot.imgUrl}} class='card-img-top' alt='...' />
 
   <!-- Review Section -->
   <h4>Leave a Review!</h4>
@@ -115,7 +118,7 @@
       rows='5'
       placeholder='Write your Review here'
     ></textarea>
-    <button type='submit'>Create the review</button>
+    <button class='button' type='submit'>Create the review</button>
   </form>
   <!-- End of the Form to Create a Review -->
   <br />

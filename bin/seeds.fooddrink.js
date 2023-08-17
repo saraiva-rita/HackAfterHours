@@ -157,7 +157,7 @@ const fooddrinkSpots = [
     
     The surroundings make this kiosk a must visit spot. And of one thing we have no doubt, the first visit will most certainly be the first of many!`,
     spotUrl: 'https://www.facebook.com/RibeiradasNausLisboa',
-    imgUrl: 'xx',
+    imgUrl: '../images/cais_colunas.jpg',
     schedule: '10:00 - 00:00',
   },
   {

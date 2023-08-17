@@ -111,6 +111,24 @@ const leisureSpots = [
     imgUrl: '',
     schedule: '10:00 – 14:00 / 16:00 – 19:00',
   },
+  {
+    name: 'Bike Bar Tours',
+    address: 'Belém and Cais do Sodré.',
+    miniDescription:
+      'If you want to take bike bar for a ride you just have to book your tour and bring your friends at the combined time.',
+    description: `Almost like a human centipede. Bike Bar Tour’s vehicle, which has been offering tours along the river since late 2013, can hold up to 17 people, but only 10 will need to pedal to make it move. The others? Well, the others drink. The bike is ideal for stag dos or birthday parties: there’s unlimited beer, sangria and rosé for the whole hour of the tour (for kids’ parties they have sodas, too). You can also bring your own music on a USB stick to play on the ride. The experience takes place nearby MAAT museum.
+    5 reason to take the bar for a walk:
+    Nobody needs an excuses to have fun, but you gave you some arguments to take the bar for a walk:
+
+    - You are visiting Lisbon and you would like to do something more radical then staying in line for Belém pastries
+    - You want to have some drinks with you friends without having to stay on the same place.
+    - You need to organize a office meeting outdoors before the “storm” damage’s the “brains”
+    - You are looking for a hen or bachelor party with drinks and irreverence, running away from the usual strippers (our staff usually does not take off their clothes, unless it is too hot and nobody minds that they expose their greek gods' bodies)
+    - Or simply because you are intelligent and know P-E-R-F-E-C-T-L-Y that life is to be lived with friends and some beauties of life must be appreciated all year, like the amazing sunset we can see from rio Tejo!`,
+    spotUrl: 'https://www.bikebartours.pt/en/home/',
+    imgUrl: '',
+    schedule: 'Every day',
+  },
 ];
 
 async function insertLeisure() {

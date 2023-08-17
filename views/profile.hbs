@@ -1,7 +1,11 @@
-  <aside class="sidebar">
+  <div class="wrapper">
+    {{!-- Sidebar --}}
+    <aside class="sidebar">
       <div class="logo">
-        <img src="/images/ironhack-symbol.png" alt="logo">
-        <h2>Hack AfterHours</h2>
+        <a href='/index'><img
+          src='/images/ironhack-symbol.png'
+          alt='logo'
+        /></a><h2>Hack AfterHours</h2>
       </div>
       <ul class="links">
         <h4>Home</h4>
@@ -48,57 +52,62 @@
       </ul>
     </aside>
 
-<a href='/auth/logout'>Logout</a>
+    {{!-- Profile Content --}}
+  <a href='/auth/logout'>Logout</a>
 
-<h1>{{username}} Profile Page </h1>
-<br />
-<h2>{{email}}</h2>
-<hr />
-<h2>Favorite places</h2>
-{{#each favoriteLeisure}}
+  <h2>Profile Page </h2>
+  <br />
+  <h3>Hello {{username}}!</h3>
+  <h3>{{email}}</h3>
+  <hr />
+  <h3>Favorite places</h3>
+  {{#each favoriteLeisure}}
   <p>{{this.name}}</p>
   <form action="/profile/removeFavs/{{_id}}" method="post">
     <button type="submit">Delete</button>
   </form>
-{{/each}}
-<br>
-{{#each favoriteFooddrink}}
+  {{/each}}
+  <br>
+  {{#each favoriteFooddrink}}
   <p>{{this.name}}</p>
     <form action="/profile/removeFavs/{{_id}}" method="post">
     <button type="submit">Delete</button>
   </form>
-{{/each}}
+    {{/each}}
 <br>
-{{#each favoriteCulture}}
+  {{#each favoriteCulture}}
   <p>{{this.name}}</p>
     <form action="/profile/removeFavs/{{_id}}" method="post">
     <button type="submit">Delete</button>
   </form>
-{{/each}}
-<br>
-<hr />
-<h2>Personal reviews</h2>
-{{#each reviewCulture}}
+  {{/each}}
+  <br>
+  <hr />
+  <h3>Personal reviews</h3>
+  {{#each reviewCulture}}
   <p>{{this.content}}</p>
   <!-- Deleting the Review -->
     <form action='/{{_id}}/culture-delete/{{../_id}}' method='post'>
       <button type='submit'>Delete</button>
     </form>
-{{/each}}
-{{#each reviewLeisure}}
+  {{/each}}
+  {{#each reviewLeisure}}
   <p>{{this.content}}</p>
   <!-- Deleting the Review -->
     <form action='/{{_id}}/leisure-delete/{{../_id}}' method='post'>
       <button type='submit'>Delete</button>
     </form>
-{{/each}}
-{{#each reviewFooddrink}}
-  <p>{{this.content}}</p>
+  {{/each}}
+  {{#each reviewFooddrink}}
+  <p>{{this.content}}</p>  
   <!-- Deleting the Review -->
     <form action='/{{_id}}/fooddrink-delete/{{../_id}}' method='post'>
       <button type='submit'>Delete</button>
     </form>
-{{/each}}
-<hr />
-<br>
-<a href='/'>Return to main menu</a>
+  {{/each}}
+  <hr />
+  <br>
+  <a href='/index'>Return to main spots menu</a>
+
+</div>
+  
