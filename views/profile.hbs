@@ -57,11 +57,9 @@
   <br>
   <div class="show-reviews">
     <div class="show-reviews-category">
-      <h3>Culture:</h3>
-      <br>
-      {{#each reviewCulture}}
-      <p>Spot: {{foundCultureSpot.name}}</p><br>
-      <p>{{this.content}}</p><br>
+      <h3>Culture:</h3>      
+      {{#each reviewCulture}}      
+      <p>{{this.content}}</p>
       <!-- Deleting the Review -->
         <form action='/{{_id}}/culture-delete/{{../_id}}' method='post'>
           <button class="button" type='submit'>Delete</button>
@@ -69,7 +67,7 @@
       {{/each}}
 
     </div>
-    <div class="vertical-line"></div>
+    
     <div class="show-reviews-category">
       <h3>Leisure:</h3>
       <br>
@@ -81,7 +79,7 @@
         </form>
       {{/each}}
     </div>
-    <div class="vertical-line"></div>
+    
     <div class="show-reviews-category">
       <h3>Food and Drinks:</h3>
       <br>

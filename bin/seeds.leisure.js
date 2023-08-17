@@ -23,8 +23,12 @@ const leisureSpots = [
   {
     name: 'Rent a Fun - Electric bike tours',
     address: 'Praça do Comércio, 1100-104 Lisboa',
-    miniDescription: 'xx',
-    description: `xx`,
+    miniDescription:
+      'Experience the thrill of electric bike adventures in Lisbon! Choose from a beachside breeze or a forest escape. Conquer hills effortlessly or cruise through urban forests. Discover unique perspectives and exhilarating rides in a city like no other.',
+    description: `Embark on an electrifying adventure with a fleet of fun electric bikes! Whether you're seeking a thrilling beachside ride or an exhilarating forest escapade, discover the perfect bike tour for your day.
+    Experience endless cycling enjoyment that goes beyond the ordinary. When the sun isn't quite tempting you to the sandy shores, why not opt for the ultimate urban exploration? Choose the Lisbon 7 Hills Electric Bike Tour and conquer the city's iconic hills effortlessly. Feel the wind in your hair as you zip through charming streets, taking in panoramic vistas that will leave you breathless. These electric bikes make climbing hills a breeze, so you can focus on soaking in the vibrant energy of Lisbon without breaking a sweat.
+    But hey, we get it – hills aren't for everyone, and that's where the "GetDown" option comes into play! Set your sights on the captivating Lisbon Forest of Monsanto. This sprawling urban woodland spans over a thousand acres, a verdant oasis nestled at a cool 250 meters above sea level. Leave the uphill struggle behind and glide through this lush paradise with ease. Let nature be your guide as you pedal through scenic trails, discovering the enchanting beauty that lies just beyond the bustling city streets.
+    Whether you're a hill conqueror or a downhill thrill-seeker, these electric bike tours offer an electrifying way to explore Lisbon's diverse landscapes. Embark on an experience that's exciting, eco-friendly, and undeniably unforgettable!`,
     spotUrl: 'https://www.rent-a-fun.com/',
     imgUrl: '/images/rent-a-fun.jpg',
     schedule: '12:00 - 23:00',
@@ -60,7 +64,10 @@ const leisureSpots = [
       'Rua Aurea, N° 260, 1100-062 Lisbon & Rua dos Fanqueiros, Nº 110,1100-404 Lisbon',
     miniDescription:
       'Feel special, Health and Wellness, a center created for you',
-    description: `xx`,
+    description: `Step into a realm of specialized expertise, where certified Therapists, hailing from renowned global institutions, cater to your body and mind's well-being with their unique skills.
+    The center is dedicated to upholding the harmony of the planet, utilizing only the finest natural products in treatments. Immerse yourself in an eco-friendly ambiance that aligns experiences with a sustainable ethos.
+    Discover a sanctuary of serenity upon entering a thoughtfully designed space. A haven of tranquility awaits, complete with a soothing atmosphere and comfortable decor, offering the ideal setting to unwind and find equilibrium amidst the chaos of everyday life.
+    Embark on a journey of rejuvenation, guided by expert hands and enveloped by a serene environment. This experience transcends mere wellness; it becomes a profound odyssey of self-care and inner peace, meticulously tailored to meet individual needs.`,
     spotUrl: 'https://www.ecomassage.com/',
     imgUrl: '/images/eco-massage.jpg',
     schedule: '10:00 - 22:00',
@@ -68,7 +75,7 @@ const leisureSpots = [
   {
     name: `Taylor's Port - Wine Shop & Tasting Room`,
     address: 'R. Cais de Santarém 8, 1100-104 Lisbon',
-    miniDescription: `xx`,
+    miniDescription: `Experience the essence of Taylor's Port at the charming Wine Pub—an oasis for wine lovers in the heart of Lisbon's historic charm.`,
     description: `Located in a prestigious area within the historic district of Alfama, next to Chafariz del Rei, the first ever public fountain in Lisbon dating back to 1487, Taylor’s Port wine shop and tasting room showcases a wide range of our Ports and is the first of its kind in Lisbon.
     This recently opened space includes a shop on the ground floor and three tasting rooms on the first floor. There are 15 wines available to try in the tasting room, starting at 5 euros.
     Among these are icons such as Taylor’s Vintage 1994 (33€) or Taylor’s Quinta de Vargellas Vintage 2015 (11€). For those who wish to broaden their knowledge, we suggest the ‘Introduction to Taylor’s”, a tasting of 5 wines which define the profile and style of our Port wines: Taylor’s Chip Dry, Taylor’s LBV, Taylor’s 20 Year Old Tawny Port, Taylor’s Quinta de Vargellas Vintage 2015 and Taylor’s Vintage 2007.
@@ -91,11 +98,38 @@ const leisureSpots = [
   {
     name: 'Chiado Training Club',
     address: 'Rua Vitor Cordon, 43, 1200-483 Lisboa',
-    miniDescription: 'xx',
-    description: `Chiado Training Club is a training studio and an urban, private and elegant refuge, where students can train with a team of highly qualified trainers, who develop training programs focused on individual goals.`,
+    miniDescription:
+      'Chiado Training Club is a training studio and an urban, private and elegant refuge.',
+    description: `The Chiado Training Club was born with the vision of promoting physical, mental, and spiritual balance in a safe, unique, and exclusive atmosphere. It distinguishes itself by being a space primarily dedicated to personalized training, supported by nutrition and physical rehabilitation services.
+    The Chiado Training Club is a training studio and an urban retreat, private and elegant, where students can train with a highly qualified team of trainers who develop training programs focused on individual goals.`,
     spotUrl: 'http://www.chiadotrainingclub.com/',
     imgUrl: '/images/chiado-training-club.jpg',
     schedule: '07:00 - 21:00',
+  },
+  {
+    name: 'Two Left Feet',
+    address: 'Campo das Cebolas, Lisbon',
+    miniDescription:
+      'Learn the fundamentals of dance (Salsa & Bachata Sensual)',
+    description: `What we’re about
+    💃🕺Dance & make new International friends in a fun & relaxed environment (Perfect for Beginners new to dance).
+    
+    A great way to meet new people, if you are new to Lisbon or a local who wants to practice dance with people from all over.
+    
+    We will learn the fundamentals of dance (Bachata Sensual & Salsa or Forró) basic turns, steps and most importantly, how to connect with your partner so you can enjoy couple dancing and put it into practice the next time you hit the dance floor.
+    
+    👉Join us here, reserve & remember to confirm/prepay to keep your spot & ensure balanced pairs.
+    👉Unless you have a partner your must take both classes on Mondays/Wednesdays to time arrange pair/partners .
+    👉 Check event details regarding partners (depends on venue/day/ratios)
+    👉Contribution: 7 euros/1hr or 10 euros/2 hours
+    
+    (Priority for waitlist :regular TLF students & then pairs.
+    
+    Tuesday class @ Jagercorner: Limited to 6 couples, hence must prepay 1-2 days before and bring a partner or check with me first.`,
+    spotUrl:
+      'https://www.meetup.com/two-left-feet-salsa-bachata-sensual-classes-beginners/',
+    imgUrl: '/images/dance.jpg',
+    schedule: 'Mondays / Wednesdays at 19:00',
   },
   {
     name: 'Barbearia Campos',

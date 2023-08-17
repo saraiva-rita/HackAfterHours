@@ -12,9 +12,11 @@ const fooddrinkSpots = [
   {
     name: 'O Cofre',
     address: 'R. dos Bacalhoeiros 2, 1100-069 Lisboa',
-    miniDescription: 'xx',
-    description:
+    miniDescription:
       'Restaurant in a great location with a wide selection of food and drinks.',
+    description: `Unveil an atmosphere of allure and mystery at O Cofre, Lisboa. Located in the heart of the city, our establishment beckons you to a world of culinary secrets.
+    Step into an elegant setting where sophistication meets curiosity, setting the stage for a memorable dining experience. Our thoughtfully curated menu invites you to explore a fusion of tradition and innovation, each dish a masterpiece of flavor.
+    Experience a gastronomic journey that leaves an indelible mark, where every bite tells a unique story. At O Cofre, Lisboa, we invite you to uncover extraordinary culinary delights and create lasting memories.`,
     spotUrl: 'http://ocofre.eatbu.com/',
     imgUrl: '/images/cofre.jpg',
     schedule: '08:30 - 23:30',
@@ -50,10 +52,12 @@ const fooddrinkSpots = [
   {
     name: 'Nosolo Italia',
     address: 'Av. 24 de Julho 49, 1200-479 Lisboa',
-    miniDescription: 'xx',
-    description:
-      'A food hall located in the Ribeira Market in Cais do Sodré.The concept aims to bring together under one roof the best chefs, restaurants, and culinary projects in the Portuguese capital, based on recommendations from Time Out magazine critics and contributors.',
-    spotUrl: 'https://www.timeoutmarket.com/lisboa/',
+    miniDescription:
+      'Where Authentic Italian Flavors Meet the Heart of Lisbon.',
+    description: `Nosolo Italia embodies a high-quality, unmistakably clear visual image. A team of skilled professionals crafts layouts for interior and exterior projects (advertising) and strategically designs interior spaces, all while considering the context in which they will fit.
+
+    Maintaining a consistent identity across all locations is paramount. The harmonized image and established work system play pivotal roles in conveying our distinct standards and quality ideals effectively.`,
+    spotUrl: 'https://nosoloitalia.com/',
     imgUrl: '/images/nosolo-italia.jpg',
     schedule: '10:00 - 24:00',
   },
@@ -110,8 +114,9 @@ const fooddrinkSpots = [
   {
     name: 'Potato Project',
     address: 'Rua do Comércio 2, 22, 1100-016 Lisboa',
-    miniDescription: 'Turkish restaurant',
-    description: `xx`,
+    miniDescription:
+      'Potato fries shop offering fries with various toppings, including vegan mayonnaise.',
+    description: `The Potato Project, located in Lisbon's downtown, has quickly become a favorite among locals for its classic hand-cut French fries and an array of flavorful sauces. Situated at 8 Rua da Conceição, near Lisbon Cathedral, the establishment offers a traditional approach, with potatoes cut daily and a choice of 11 sauces, three cheeses, and 14 toppings. The selection of the potato variety, known for its sustainable food source, and the use of gluten and lactose-free ingredients showcase the thoughtfulness behind the menu. A visit to the Potato Project promises a personalized and delectable experience, allowing you to enjoy your own customized traditional French fries in just a matter of minutes.`,
     spotUrl: 'https://www.potatoprojectpt.com',
     imgUrl: '/images/potato-project.jpg',
     schedule: '10:00 - 01:30',
@@ -181,7 +186,8 @@ const fooddrinkSpots = [
   {
     name: 'Confeitaria Nacional',
     address: 'Praça da Figueira, 18 B',
-    miniDescription: 'xx',
+    miniDescription:
+      'A sweet haven in the heart of Lisbon, Confeitaria Nacional invites you to savor the art of exquisite pastries.',
     description: `Confeitaria Nacional was founded in 1829 by Balthazar Roiz Castanheiro.
     In 1829, the population of Portugal (metropolis) was just over 3 million.
     There was a troubled period in Portugal – which was in the middle of the Civil War, fought between liberals and absolutists – at stake was the respect for the rules of succession to the Portuguese throne.
@@ -217,8 +223,11 @@ const fooddrinkSpots = [
     name: 'Boteco da DRI',
     address: 'Cais da Ribeira Nova, Armazém B Cais do Sodré, Lisboa',
     miniDescription:
-      'Boteco da Dri is the new Brazilian restaurant in Cais do Sodré and serves until late.',
-    description: `xxx`,
+      'From Rio to Lisbon, they bring the finest Brazilian flavors to you in a relaxed and sophisticated ambiance.',
+    description: `Embark on a captivating culinary journey that seamlessly intertwines the vibrant flavors of Rio with the enchanting ambiance of Lisbon. Our establishment is a testament to the fusion of both worlds, curating an exquisite menu that captures the very essence of Brazilian taste in the heart of this charming Portuguese city.
+    Elevate your senses as you experience the dynamic spirit of Rio through each meticulously crafted dish. Our menu pays homage to the rich tapestry of Brazilian cuisine, infusing traditional recipes with a refined touch, delivering a symphony of flavors that transport you to bustling markets and lively streets.
+    Within an environment that harmoniously merges casual comfort with timeless sophistication, immerse yourself in a dining encounter that encapsulates the liberating atmosphere of Rio while embracing the enduring allure of Lisbon. Whether you find yourself enjoying a leisurely luncheon or relishing in a memorable evening amongst dear companions, our establishment guarantees an odyssey of flavors and sensations that will linger in your memory long after your meal concludes.
+    Join the celebration of the harmonious amalgamation of Rio and Lisbon, where the culinary artistry of Brazil converges with the grace of the Portuguese capital. Discover the flawless unity of cultures and tastes at our venue, where every dish is a testament to a profound dedication to bringing Brazil's finest to your table.`,
     spotUrl: 'https://www.facebook.com/botecodadri/?locale=pt_BR',
     imgUrl: '/images/boteco-dri.jpg',
     schedule: '18:00 - 00:00',
@@ -236,9 +245,11 @@ const fooddrinkSpots = [
   {
     name: 'Lupita Pizzaria',
     address: 'Rua de S. Paulo 79, 1200-427 Lisboa',
-    miniDescription:
-      'Unassuming mainstay turning out Italian-style pizzas, Basque burnt cheesecake & natural wines.',
-    description: `xxx`,
+    miniDescription: 'Naturally leavened pizza and natural wines',
+    description: `Indulge in a slice of heaven at Lupita Pizzaria Lisboa! This pizzeria is a culinary haven where traditional Italian flavors meet the vibrant spirit of Lisbon.
+    Savor the irresistible aroma of freshly baked pizzas crafted with love and expertise. Each slice is a harmonious dance of premium ingredients, from the finest cheeses to the most flavorful toppings, all brought together on a perfectly crispy crust.
+    Step into a cozy ambiance and let the warmth of hospitality embrace you. Whether you're seeking a casual lunch, a romantic dinner, or a delightful meal with friends, Lupita Pizzaria Lisboa is the place to be.
+    Join in for an unforgettable gastronomic journey where every bite tells a story of passion and culinary excellence. Your search for the perfect pizza ends here – come taste the magic at Lupita Pizzaria Lisboa!`,
     spotUrl: 'https://www.facebook.com/lupita.pizzaria/',
     imgUrl: '/images/lupita-pizzaria.jpg',
     schedule: '12:00 - 15:00; 18:00 - 23:30',
