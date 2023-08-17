@@ -86,6 +86,7 @@
   <h3>Personal reviews</h3>
   {{#each reviewCulture}}
   <p>{{this.content}}</p>
+  <p>Spot:{{foundCultureSpot.name}}</p>
   <!-- Deleting the Review -->
     <form action='/{{_id}}/culture-delete/{{../_id}}' method='post'>
       <button type='submit'>Delete</button>

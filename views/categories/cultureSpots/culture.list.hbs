@@ -53,12 +53,17 @@
   </aside>
 
   {{! Content list }}
+  <h2>Culture</h2>
+  <br />
   <div class='list-content'>
-    <h2>Culture</h2>
     {{#each cultureSpots}}
-      <div>
-        <h3>{{name}}</h3>
-        <p>{{miniDescription}}</p>
+      <div class='each-spot'>
+        <img src='{{imgUrl}}' alt='' />
+        <div>
+          <h3>{{name}}</h3>
+          <hr />
+          <p>{{miniDescription}}</p>
+        </div>
 
         <form action='/cultureSpots/{{_id}}/' method='get'>
           <button class='button'>See more</button>

@@ -53,11 +53,14 @@
   </aside>
 
   {{! Content list }}
+  <h2>Leisure</h2>
+  <br />
   <div class='list-content'>
-    <h2>Leisure</h2>
     {{#each leisureSpots}}
-      <div>
+      <div class='each-spot'>
+        <img class='img-list' src='{{imgUrl}}' alt='' />
         <h3>{{name}}</h3>
+        <hr />
         <p>{{miniDescription}}</p>
 
         <form action='/leisureSpots/{{_id}}/' method='get'>

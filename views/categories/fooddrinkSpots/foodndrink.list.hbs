@@ -54,12 +54,17 @@
   </aside>
 
   {{! Content list }}
+  <h2>Food and Drinks</h2>
+  <br />
   <div class='list-content'>
-    <h2>Food and Drinks</h2>
     {{#each fooddrinkSpots}}
-      <div>
-        <h3>{{name}}</h3>
-        <p>{{miniDescription}}</p>
+      <div class='each-spot'>
+        <img class='img-list' src='{{imgUrl}}' alt='' />
+        <div>
+          <h3>{{name}}</h3>
+          <hr />
+          <p>{{miniDescription}}</p>
+        </div>
 
         <form action='/fooddrinkSpots/{{_id}}/' method='get'>
           <button class='button'>See more</button>

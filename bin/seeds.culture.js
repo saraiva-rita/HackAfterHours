@@ -15,7 +15,7 @@ const cultureSpots = [
     miniDescription: 'xx',
     description: `xx`,
     spotUrl: 'http://www.museudofado.pt/',
-    imgUrl: 'xx',
+    imgUrl: './images/museu-do-fado.jpg',
     schedule: 'xx',
   },
   {
@@ -66,7 +66,7 @@ const cultureSpots = [
     Location: The museum is strategically situated in the Baixa district of Lisbon, making it easily accessible to tourists exploring the city center.
     `,
     spotUrl: 'https://www.lisboastorycentre.pt/',
-    imgUrl: '',
+    imgUrl: './images/lisboa-story-centre.jpg',
     schedule: '10:00 - 19:00',
   },
   {
@@ -92,7 +92,7 @@ const cultureSpots = [
     
     Accessibility: While the castle is located on a hilltop, it is accessible by foot or via the historic Tram 28. The uphill walk provides an opportunity to enjoy Lisbon's charming streets and neighborhoods.`,
     spotUrl: 'https://castelodesaojorge.pt/',
-    imgUrl: 'xx',
+    imgUrl: '/images/castelo-sao-jorge.jpg',
     schedule: '09:00 - 21:00',
   },
   {
@@ -117,7 +117,7 @@ const cultureSpots = [
     Location: The elevator is conveniently located within the Baixa district, making it easily accessible for visitors exploring the city center.
     `,
     spotUrl: 'https://www.visitlisboa.com/pt-pt/locais/elevador-de-santa-justa',
-    imgUrl: 'xx',
+    imgUrl: './images/elevador-santa-justa.jpg',
     schedule: '07:30 - 23:00',
   },
   {
@@ -143,7 +143,7 @@ const cultureSpots = [
     
     Tourist Attraction: Today, the Chafariz de El-Rei remains an attraction for both tourists and locals, drawing visitors interested in exploring Lisbon's historical and architectural treasures.`,
     spotUrl: 'http://www.museudofado.pt/',
-    imgUrl: 'xx',
+    imgUrl: './images/chafariz-del-rei.jpeg',
     schedule: 'xx',
   },
 ];
