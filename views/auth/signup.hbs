@@ -54,7 +54,7 @@
   <br />
 
   {{! Sign up }}
-  <div id='form'>
+  <div class="auth-form">
     <h2>Sign Up</h2>
     <form action='/auth/signup' method='POST'>
 
@@ -73,7 +73,7 @@
         <input type='password' name='password' placeholder='Your password' />
       </label>
 
-      <button type='submit'>Sign Up</button>
+      <button class='button' type='submit'>Sign Up</button>
 
       {{#if errorMessage}}
         <p class='error'>{{errorMessage}}</p>

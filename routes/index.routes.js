@@ -7,7 +7,7 @@ const User = require('../models/User.model');
 
 /* GET Landing Page */
 router.get('/', (req, res, next) => {
-  res.render('landingpage');
+  res.render('landingpage', {layout: 'landingLayout.hbs'});
 });
 /* GET home page */
 router.get('/index', (req, res, next) => {

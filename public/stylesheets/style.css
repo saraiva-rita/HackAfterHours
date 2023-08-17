@@ -263,19 +263,19 @@ p {
 }
 
 /* LOGIN MENU */
-#login-form {
-  /* alterar para uma caixa */
-}
-#login-form label {
+/*.auth-form {
+  alterar para uma caixa 
+}*/
+.auth-form label {
   padding: 30px;
   font-size: 20px;
 }
-#login-form input {
+.auth-form input {
   padding: 10px;
   border-radius: 5px;
   border: none;
 }
-#login-form h2 {
+.auth-form h2 {
   padding-bottom: 30px;
 }
 
