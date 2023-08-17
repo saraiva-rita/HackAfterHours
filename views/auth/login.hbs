@@ -1,23 +1,26 @@
 <div class='wrapper'>
   {{! Login }}
-  <div class="auth-form">
-    <h2>Log In</h2>
+  <h2>Log In</h2>
+  <div class='auth-form-wrapper'>
     <form action='/auth/login' method='POST'>
-
-      <label>
-        Username
-        <input type='text' name='username' placeholder='Your username' />
-      </label>
-
-      <label>
-        Email
-        <input type='email' name='email' placeholder='Your email' />
-      </label>
-
-      <label>
-        Password
-        <input type='password' name='password' placeholder='Your password' />
-      </label>
+      <div>
+        <label>
+          Username
+          <input type='text' name='username' placeholder='Your username' />
+        </label>
+      </div>
+      <div>
+        <label>
+          Email
+          <input type='email' name='email' placeholder='Your email' />
+        </label>
+      </div>
+      <div>
+        <label>
+          Password
+          <input type='password' name='password' placeholder='Your password' />
+        </label>
+      </div>
 
       <button class='button' type='submit'>Log In</button>
 
@@ -25,7 +28,5 @@
         <p class='error'>{{errorMessage}}</p>
       {{/if}}
     </form>
-    <br />
   </div>
-
 </div>

@@ -26,7 +26,7 @@ const cultureSpots = [
     
     Time and the music fly, in a restored building of national interest right next door to the neighbourhoods where you can hear fado being sung at night.`,
     spotUrl: 'http://www.museudofado.pt/',
-    imgUrl: './images/museu-do-fado.jpg',
+    imgUrl: '/images/museu-do-fado.jpg',
     schedule: '10:00 - 18:00',
   },
   {
@@ -51,7 +51,7 @@ const cultureSpots = [
     Pedestrian Access: The arch is conveniently located at the northern entrance of Rua Augusta, a bustling pedestrian street known for its shops, cafes, and lively atmosphere. It serves as a gateway connecting the commercial center of the city to the historic waterfront area.
     `,
     spotUrl: 'https://www.visitlisboa.com/pt-pt/locais/arco-da-rua-augusta',
-    imgUrl: './images/arco_rua_augusta.JPG',
+    imgUrl: '/images/arco_rua_augusta.JPG',
     schedule: '10:00 - 19:00',
   },
   {
@@ -128,7 +128,7 @@ const cultureSpots = [
     Location: The elevator is conveniently located within the Baixa district, making it easily accessible for visitors exploring the city center.
     `,
     spotUrl: 'https://www.visitlisboa.com/pt-pt/locais/elevador-de-santa-justa',
-    imgUrl: './images/elevador-santa-justa.jpg',
+    imgUrl: '/images/elevador-santa-justa.jpg',
     schedule: '07:30 - 23:00',
   },
   {
@@ -154,7 +154,7 @@ const cultureSpots = [
     
     Tourist Attraction: Today, the Chafariz de El-Rei remains an attraction for both tourists and locals, drawing visitors interested in exploring Lisbon's historical and architectural treasures.`,
     spotUrl: 'https://chafarizdelrei.com/',
-    imgUrl: './images/chafariz-del-rei.jpeg',
+    imgUrl: '/images/chafariz-del-rei.jpeg',
     schedule: 'Open 24 hours',
   },
   {
@@ -163,7 +163,7 @@ const cultureSpots = [
     miniDescription: `The Convent of Our Lady of Mount Carmel is a former Catholic convent located in the civil parish of Santa Maria Maior, municipality of Lisbon.`,
     description: `The ruined Carmo Convent is said to be Lisbon's loveliest church, despite the fact it hasn’t had a roof since it fell in during the 1755 earthquake. It now stands as a reminder of the earthquake and a memorial. The beautiful gothic arches still stand and are well worth viewing. Much of the architecture dates back to the 1300s, while Manueline (Portuguese Gothic) windows and other details were added later, in the 16th and 18th centuries. You'll even be able to spot eerie South American mummies (a young boy and a young girl from Peru) if you like closely.`,
     spotUrl: 'http://www.museuarqueologicodocarmo.pt/',
-    imgUrl: './images/carmo.jpg',
+    imgUrl: '/images/carmo.jpg',
     schedule: 'May-Sep: Mon-Sat 10am-7pm; Oct-Apr: Mon-Sat 10am-6pm',
   },
   {
@@ -180,7 +180,7 @@ const cultureSpots = [
     
     Sticking closely to topic, it’s one of the capital’s hotspots.`,
     spotUrl: 'https://www.teatrosaoluiz.pt/',
-    imgUrl: './images/sao-luis.jpg',
+    imgUrl: '/images/sao-luis.jpg',
     schedule: 'May-Sep: Mon-Sat 10am-7pm; Oct-Apr: Mon-Sat 10am-6pm',
   },
 ];

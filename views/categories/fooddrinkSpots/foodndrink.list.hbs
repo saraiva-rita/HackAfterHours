@@ -1,17 +1,17 @@
 <div class='spot-list wrapper'>
-   {{! Content list }}
+  {{! Content list }}
   <h2>Food and Drinks</h2>
   <br />
   <div class='list-content'>
     {{#each fooddrinkSpots}}
       <div class='each-spot'>
         <img src='{{imgUrl}}' alt='' />
-        <div>
+        <div class='each-spot-info'>
           <h3>{{name}}</h3>
           <hr />
           <p>{{miniDescription}}</p>
         </div>
-        <div class="button-list">
+        <div class='button-list'>
           <form action='/fooddrinkSpots/{{_id}}/' method='get'>
             <button class='button'>See more</button>
           </form>

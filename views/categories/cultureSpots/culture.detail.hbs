@@ -13,14 +13,8 @@
       <p><b>Website</b>:
         <a href={{foundCultureSpot.spotUrl}} target: "_blank">{{foundCultureSpot.spotUrl}}</a></p>
       <p><b>Schedule</b>: {{foundCultureSpot.schedule}}</p>
-    </div>
-    <div class="spot-details-review">
-
-
-    </div>
-  </div>
-
-  {{#if isFav}}
+    </div>    
+    {{#if isFav}}
     <form
       action='/cultureSpots/removeFavs/{{foundCultureSpot._id}}'
       method='post'
@@ -41,7 +35,7 @@
         </svg>
       </button>
     </form>
-  {{else}}
+    {{else}}
 
     <form action='/cultureSpots/addFavs/{{foundCultureSpot._id}}' method='post'>
       <button class='fav-button' type='submit'>
@@ -59,16 +53,12 @@
         </svg>
       </button>
     </form>
-  {{/if}}
+    {{/if}}
 
-  <!-- Review Section -->
-  <h4>Leave a Review!</h4>
-  <!-- Form to Create a Review -->
-  <form
-    class='review'
-    action='/review/culture/{{foundCultureSpot._id}}'
-    method='post'
-  >
+   <!-- Review Section -->
+    <h4>Leave a Review!</h4>
+   <!-- Form to Create a Review -->
+   <form class='review' action='/review/culture/{{foundCultureSpot._id}}' method='post'>
     <textarea
       name='content'
       id='content'
@@ -79,16 +69,16 @@
     <br>
     <br>
     <button class='button' type='submit'>Create the review</button>
-  </form>
-  <!-- End of the Form to Create a Review -->
-  <br />
-  <!-- Display all the Reviews of the Culture Spot that we're seeing -->
-  {{#each foundCultureSpot.reviews}}
+    </form>
+    <!-- End of the Form to Create a Review -->
+    <br />
+    <!-- Display all the Reviews of the Culture Spot that we're seeing -->
+    {{#each foundCultureSpot.reviews}}
     <div>
       <!-- Actually displaying the review -->
       <p><span>Review Author: {{author.username}}</span> <br />{{content}}</p>
     </div>
-  {{/each}}
-  <br />
+    {{/each}}  
+  </div>
 
 </div>

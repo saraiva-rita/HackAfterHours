@@ -16,7 +16,7 @@ const fooddrinkSpots = [
     description:
       'Restaurant in a great location with a wide selection of food and drinks.',
     spotUrl: 'http://ocofre.eatbu.com/',
-    imgUrl: './images/cofre.jpg',
+    imgUrl: '/images/cofre.jpg',
     schedule: '08:30 - 23:30',
   },
   {
@@ -33,7 +33,7 @@ const fooddrinkSpots = [
     
     The door is open to everyone, every day.`,
     spotUrl: 'http://www.solepesca.com',
-    imgUrl: './images/sol-e-pesca.jpg',
+    imgUrl: '/images/sol-e-pesca.jpg',
     schedule: '12:00 - 02:00',
   },
   {
@@ -44,7 +44,7 @@ const fooddrinkSpots = [
     description:
       'A food hall located in the Ribeira Market in Cais do Sodré.The concept aims to bring together under one roof the best chefs, restaurants, and culinary projects in the Portuguese capital, based on recommendations from Time Out magazine critics and contributors.',
     spotUrl: 'https://www.timeoutmarket.com/lisboa/',
-    imgUrl: './images/timeout-market.jpg',
+    imgUrl: '/images/timeout-market.jpg',
     schedule: '10:00 - 24:00',
   },
   {
@@ -54,7 +54,7 @@ const fooddrinkSpots = [
     description:
       'A food hall located in the Ribeira Market in Cais do Sodré.The concept aims to bring together under one roof the best chefs, restaurants, and culinary projects in the Portuguese capital, based on recommendations from Time Out magazine critics and contributors.',
     spotUrl: 'https://www.timeoutmarket.com/lisboa/',
-    imgUrl: './images/nosolo-italia.jpg',
+    imgUrl: '/images/nosolo-italia.jpg',
     schedule: '10:00 - 24:00',
   },
   {
@@ -69,7 +69,7 @@ const fooddrinkSpots = [
     Cafe Basílio at Bacalhoeiros reflects the mind of Basílio: lively, good looking and where we feel the presence of this coffee baron.
     `,
     spotUrl: 'https://www.ilovenicolau.com/pt/onde-estamos/basilio/',
-    imgUrl: './images/basilio.jpg',
+    imgUrl: '/images/basilio.jpg',
     schedule: '08:30 - 19:00',
   },
   {
@@ -92,7 +92,7 @@ const fooddrinkSpots = [
     - Green Juice of Nicolau to give a boost to your day    
     - Our açaí with a wonderful granola without sugar but plenty of flavour`,
     spotUrl: 'https://www.ilovenicolau.com/pt/onde-estamos/basilio/',
-    imgUrl: './images/nicolau.jpg',
+    imgUrl: '/images/nicolau.jpg',
     schedule: '08:30 - 19:00',
   },
   {
@@ -104,7 +104,7 @@ const fooddrinkSpots = [
     Inspired by a journey to Mexico and experience of tasting authentic Mexican food.
     The perception of Mexican cuisine is shifting. Lovers of real Mexican food are no longer satisfied with more main stream tex mex offer .Costumers want to experience the real taste of Mexico. And we want to offer you the fascinating quality of Mexican food remaining true to traditional cooking methods and flavours.`,
     spotUrl: 'http://www.lasficheras.com/',
-    imgUrl: './images/las-ficheras.jpg',
+    imgUrl: '/images/las-ficheras.jpg',
     schedule: '12:00 - 01:00',
   },
   {
@@ -113,11 +113,11 @@ const fooddrinkSpots = [
     miniDescription: 'Turkish restaurant',
     description: `xx`,
     spotUrl: 'https://www.potatoprojectpt.com',
-    imgUrl: './images/potato-project.jpg',
+    imgUrl: '/images/potato-project.jpg',
     schedule: '10:00 - 01:30',
   },
   {
-    name: 'Manteigaria - Fábrica de Pastéis de Nata',
+    name: 'Manteigaria - Pastéis de Nata',
     address: 'Rua Augusta 195-197, Baixa, 1100-619 Lisboa',
     miniDescription: 'Authentic Pastéis de Nata',
     description: `Manteigaria is already a reference when it comes to making Pastéis de Nata (custard tarts). With five venues in total - three in Lisbon and two in Porto - Manteigaria is distinguished by the flavour that it gives to these traditional sweets and also by the experience it provides!
@@ -163,7 +163,7 @@ const fooddrinkSpots = [
     Musicbox values ​​the technical quality of the show in terms of sound, lighting and image projection, betting on the best possible conditions for the show, in an intimate room that promotes proximity between the artists and the public.
     An integral part of the cultural life of the city of Lisbon, driving the cultural offer of Cais do Sodré, Musicbox promotes numerous partnerships with leading events, cultural agents and publishers that result in programmatic spaces, testimony of the most relevant cultural movements in the city.`,
     spotUrl: 'https://musicboxlisboa.com/mb/',
-    imgUrl: './images/musicbox.jpg',
+    imgUrl: '/images/musicbox.jpg',
     schedule: '23:00 - 06:00',
   },
   {
@@ -175,7 +175,7 @@ const fooddrinkSpots = [
 
     The theme is inviting, as is the uniqueness of the atmosphere. What was once a rundown boarding house, is now a space worthy of watching a burlesque show, having one of its signature cocktails or simply hanging out with friends. Go to Pensão Amor, discover its corners with your friends, boyfriend/girlfriend, alone... here you will be greeted with the smile of open minds, which gave the city of Lisbon and this old building – a new life, based on the original idea.`,
     spotUrl: 'https://pensaoamor.com/',
-    imgUrl: './images/pensão-amor.jpg',
+    imgUrl: '/images/pensão-amor.jpg',
     schedule: '12:00 - 03:00',
   },
   {
@@ -188,7 +188,7 @@ const fooddrinkSpots = [
     Nothing intimidated the young Balthazar, who inaugurated a space that quickly became a place of choice for Lisbon's elites.
     The quality always demonstrated made the distinctions add up over the years. Balthazar Roiz Castanheiro has known how to achieve fame and recognition for 40 years.`,
     spotUrl: 'https://confeitarianacional.com/',
-    imgUrl: './images/confeitaria-nacional.jpg',
+    imgUrl: '/images/confeitaria-nacional.jpg',
     schedule: '08:30 - 20:00',
   },
   {
@@ -200,7 +200,7 @@ const fooddrinkSpots = [
 
     Created in 1994 (by the musician Tito Paris under the name Baile) and directed by Alcides Gonçalves, and the sisters Madalena and Sofia Saudade e Silva, son of the great Cape Verdean singer Bana. It operated at the 17th-century Almada Carvalhais Palace, a building belonging to Casa Pia Atlético Clube, located at 50 Largo do Conde Barão, in Lisbon. Closed in 2007, since then there has been a movement to restore the B. Leza in another location and occasional initiatives in a roaming through various cultural spaces and other night spots in the city.`,
     spotUrl: 'https://www.facebook.com/BlezaClube/',
-    imgUrl: './images/bleza.jpg',
+    imgUrl: '/images/bleza.jpg',
     schedule: '22:30 - 04:00',
   },
   {
@@ -210,7 +210,7 @@ const fooddrinkSpots = [
       'Titanic Sur Mer is the spiritual successor of the late Maxime, but with a musically more eclectic schedule.',
     description: `It is one of the faces of a Cais do Sodré that is flooded with people every weekend. Manuel João Vieira – although it may not seem like it – knows what he does. He took a building that served the fish auction and turned it into a bar / concert hall that couldn't be closer to the sea. Titanic Sur Mer is the spiritual successor of the late Maxime, but with a musically more eclectic schedule. Depending on the night, you can listen to jazz, samba and forró, African music and indie rock. Plus the occasional Ena Pá 2000. And there are also parties, almost always with the bar, such as Beyoncé Fest, It's A Trap, Alienação, Mundo Mestiço, Cabaré Tropical, among others. Between cups and concerts is to choose what you like best.`,
     spotUrl: 'https://www.facebook.com/titanicsurmer',
-    imgUrl: './images/titanic.jpg',
+    imgUrl: '/images/titanic.jpg',
     schedule: '23:00 - 06:00',
   },
   {
@@ -220,7 +220,7 @@ const fooddrinkSpots = [
       'Boteco da Dri is the new Brazilian restaurant in Cais do Sodré and serves until late.',
     description: `xxx`,
     spotUrl: 'https://www.facebook.com/botecodadri/?locale=pt_BR',
-    imgUrl: './images/boteco-dri.jpg',
+    imgUrl: '/images/boteco-dri.jpg',
     schedule: '18:00 - 00:00',
   },
   {
@@ -230,7 +230,7 @@ const fooddrinkSpots = [
       'There are no burritos or chili con carne here. At La Fugitiva there is no Tex-Mex cuisine.',
     description: `The hardest part was remembering that we were in Lisbon. The music was loud and upbeat and the walls were painted with pictures of cornfields and people in colorful costumes. Portuguese was hardly heard, which went unnoticed among other languages, such as Spanish and English. On the tables on the terrace or inside, there are nachos, tacos and margaritas. La Fugitiva, open since summer on the busy Rua de São Paulo, in Cais do Sodré, wants to be a trip to Mexico, without the need for suitcases and luggage.`,
     spotUrl: 'https://www.facebook.com/lafugitivatacobar/',
-    imgUrl: './images/fugitiva.jpg',
+    imgUrl: '/images/fugitiva.jpg',
     schedule: '17:00 - 23:00',
   },
   {
@@ -240,7 +240,7 @@ const fooddrinkSpots = [
       'Unassuming mainstay turning out Italian-style pizzas, Basque burnt cheesecake & natural wines.',
     description: `xxx`,
     spotUrl: 'https://www.facebook.com/lupita.pizzaria/',
-    imgUrl: './images/lupita-pizzaria.jpg',
+    imgUrl: '/images/lupita-pizzaria.jpg',
     schedule: '12:00 - 15:00; 18:00 - 23:30',
   },
 ];

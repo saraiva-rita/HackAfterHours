@@ -6,12 +6,12 @@
     {{#each leisureSpots}}
       <div class='each-spot'>
         <img src='{{imgUrl}}' alt='' />
-        <div>
+        <div class='each-spot-info'>
           <h3>{{name}}</h3>
           <hr />
           <p>{{miniDescription}}</p>
         </div>
-        <div class="button-list">
+        <div class='button-list'>
           <form action='/leisureSpots/{{_id}}/' method='get'>
             <button class='button'>See more</button>
           </form>
@@ -22,6 +22,5 @@
     <br />
 
   </div>
-
 
 </div>

@@ -1,6 +1,6 @@
 <div class='spot-details wrapper'>
 
-    <div class="main-content">
+  <div class="main-content">
       <h2>{{foundFooddrinkSpot.name}}</h2>
     <div class="spot-details-img">
       <img src={{foundFooddrinkSpot.imgUrl}} alt='...' />
@@ -9,16 +9,10 @@
       <br />
       <p><b>Description</b>: {{foundFooddrinkSpot.description}}</p>
       <p><b>Address</b>: {{foundFooddrinkSpot.address}}</p>
-      <p><b>Website</b>:
-        <a href={{foundFooddrinkSpot.spotUrl}} target: "_blank">{{foundCultureSpot.spotUrl}}</a></p>
+      <p><b>Website</b>:<a href={{foundFooddrinkSpot.spotUrl}} target:"_blank">{{foundCultureSpot.spotUrl}}</a></p>
       <p><b>Schedule</b>: {{foundFooddrinkSpot.schedule}}</p>
     </div>
-    <div class="spot-details-review">
-    </div>
-  </div>
-
-
-  {{#if isFav}}
+    {{#if isFav}}
     <form
       action='/fooddrinkSpots/removeFavs/{{foundFooddrinkSpot._id}}'
       method='post'
@@ -39,12 +33,11 @@
         </svg>
       </button>
     </form>
-  {{else}}
+    {{else}}
 
     <form
       action='/fooddrinkSpots/addFavs/{{foundFooddrinkSpot._id}}'
-      method='post'
-    >
+      method='post'>
       <button class='fav-button' type='submit'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -60,30 +53,31 @@
         </svg>
       </button>
     </form>
-  {{/if}}
+    {{/if}}
 
-  <!-- Review Section -->
-  <h4>Leave a Review!</h4>
-  <!-- Form to Create a Review -->
-  <form action='/review/fooddrink/{{foundFooddrinkSpot._id}}' method='post'>
-    <textarea
-      name='content'
-      id='content'
-      cols='30'
-      rows='5'
-      placeholder='Write your Review here'
-    ></textarea>
-    <button class='button' type='submit'>Create the review</button>
-  </form>
-  <!-- End of the Form to Create a Review -->
-  <br />
-  <!-- Display all the Reviews of the Food and Drinks Spot that we're seeing -->
-  {{#each foundFooddrinkSpot.reviews}}
+    <!-- Review Section -->
+    <h4>Leave a Review!</h4>
+    <!-- Form to Create a Review -->
+    <form class='review' action='/review/fooddrink/{{foundFooddrinkSpot._id}}' method='post'>
+      <textarea
+        name='content'
+        id='content'
+        cols='30'
+        rows='5'
+        placeholder='Write your Review here'
+      ></textarea>
+      <br>
+      <br>
+      <button class='button' type='submit'>Create the review</button>
+    </form>
+   <!-- End of the Form to Create a Review -->
+   <br />
+   <!-- Display all the Reviews of the Food and Drinks Spot that we're seeing -->
+   {{#each foundFooddrinkSpot.reviews}}
     <div>
       <!-- Actually displaying the review -->
       <p><span>Review Author: {{author.username}}</span> <br />{{content}}</p>
     </div>
-  {{/each}}
-  <br />
-
+    {{/each}}
+  </div>
 </div>

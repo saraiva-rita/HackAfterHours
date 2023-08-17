@@ -14,15 +14,10 @@
         <a href={{foundLeisureSpot.spotUrl}} target: "_blank">{{foundCultureSpot.spotUrl}}</a></p>
       <p><b>Schedule</b>: {{foundLeisureSpot.schedule}}</p>
     </div>
-    <div class="spot-details-review">
-    </div>
-  </div>
-
-  {{#if isFav}}
+    {{#if isFav}}
     <form
       action='/leisureSpots/removeFavs/{{foundLeisureSpot._id}}'
-      method='post'
-    >
+      method='post'>
       <button class='fav-button' type='submit'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -57,31 +52,32 @@
         </svg>
       </button>
     </form>
-  {{/if}}
+    {{/if}}
   
-
-  <!-- Review Section -->
-  <h4>Leave a Review!</h4>
-  <!-- Form to Create a Review -->
-  <form action='/review/leisure/{{foundLeisureSpot._id}}' method='post'>
+    <!-- Review Section -->
+    <h4>Leave a Review!</h4>
+    <!-- Form to Create a Review -->
+    <form class='review' action='/review/leisure/{{foundLeisureSpot._id}}' method='post'>
     <textarea
       name='content'
       id='content'
       cols='30'
       rows='5'
       placeholder='Write your Review here'
-    ></textarea>
-    <button class='button' type='submit'>Create the review</button>
-  </form>
-  <!-- End of the Form to Create a Review -->
-  <br />
-  <!-- Display all the Reviews of the Leisure Spot that we're seeing -->
-  {{#each foundLeisureSpot.reviews}}
+     ></textarea>
+     <br>
+     <br>
+     <button class='button' type='submit'>Create the review</button>
+   </form>
+   <!-- End of the Form to Create a Review -->
+   <br />
+   <!-- Display all the Reviews of the Leisure Spot that we're seeing -->
+    {{#each foundLeisureSpot.reviews}}
     <div>
       <!-- Actually displaying the review -->
       <p><span>Review Author: {{author.username}}</span> <br />{{content}}</p>
     </div>
-  {{/each}}
-  <br />
+    {{/each}}
+  </div>
 
 </div>
