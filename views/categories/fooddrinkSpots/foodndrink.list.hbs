@@ -5,16 +5,17 @@
   <div class='list-content'>
     {{#each fooddrinkSpots}}
       <div class='each-spot'>
-        <img class='img-list' src='{{imgUrl}}' alt='' />
+        <img src='{{imgUrl}}' alt='' />
         <div>
           <h3>{{name}}</h3>
           <hr />
           <p>{{miniDescription}}</p>
         </div>
-
-        <form action='/fooddrinkSpots/{{_id}}/' method='get'>
-          <button class='button'>See more</button>
-        </form>
+        <div class="button-list">
+          <form action='/fooddrinkSpots/{{_id}}/' method='get'>
+            <button class='button'>See more</button>
+          </form>
+        </div>
       </div>
     {{/each}}
 

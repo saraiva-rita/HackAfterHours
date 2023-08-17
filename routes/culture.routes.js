@@ -48,6 +48,7 @@ router.get('/cultureSpots/:cultureId', isLoggedIn, async (req, res) => {
     res.render('categories/cultureSpots/culture.detail.hbs', {
       foundCultureSpot,
       isFav,
+      currentUser,
     });
   } catch (error) {
     console.log(error);
@@ -134,6 +135,7 @@ router.post('/review/culture/:cultureId', async (req, res) => {
     const userUpdate = await User.findByIdAndUpdate(user._id, {
       $push: { reviewCulture: newReview._id },
     });
+    console.log(userUpdate);
     res.redirect(`/cultureSpots/${cultureId}`);
   } catch (error) {
     console.log(error);

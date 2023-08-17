@@ -12,11 +12,22 @@ const cultureSpots = [
   {
     name: 'Museu do Fado',
     address: 'Alfama, Largo do Chafariz de Dentro 1, 1100-139 Lisboa',
-    miniDescription: 'xx',
-    description: `xx`,
+    miniDescription:
+      'Exhibition on traditional fado, with audiovisual displays & archives, plus a cafe with concerts.',
+    description: `The Museu do Fado is one of the must-visit places in Lisbon. Besides representing one of the region’s most important cultural legacies, it also has a restaurant and a themed shop where you can spend some time to catch the spirit of saudade (nostalgia).
+
+    Totally devoted to fado and the guitar, it has a permanent exhibition and temporary ones, alongside a document centre and an auditorium with regular events and a very interesting programme.
+    
+    With songs by the greatest Portuguese artists illustrating an art form that Portugal gave to the world, the museum’s artistic quality will surprise you.
+    
+    The restaurant serves typical Portuguese food and helps to give your visit a traditional flavour.
+    
+    But technology, in the form of interactive stations documenting fado’s history throughout the museum and audioguides allowing you to listen to dozens of fado songs composed and sung down the decades, lets you delve further into history.
+    
+    Time and the music fly, in a restored building of national interest right next door to the neighbourhoods where you can hear fado being sung at night.`,
     spotUrl: 'http://www.museudofado.pt/',
     imgUrl: './images/museu-do-fado.jpg',
-    schedule: 'xx',
+    schedule: '10:00 - 18:00',
   },
   {
     name: 'Rua Augusta Arch',
@@ -142,9 +153,35 @@ const cultureSpots = [
     Location: The Chafariz de El-Rei is typically situated in the Alfama district of Lisbon, a historic neighborhood known for its narrow streets, charming atmosphere, and cultural landmarks.
     
     Tourist Attraction: Today, the Chafariz de El-Rei remains an attraction for both tourists and locals, drawing visitors interested in exploring Lisbon's historical and architectural treasures.`,
-    spotUrl: 'http://www.museudofado.pt/',
+    spotUrl: 'https://chafarizdelrei.com/',
     imgUrl: './images/chafariz-del-rei.jpeg',
-    schedule: 'xx',
+    schedule: 'Open 24 hours',
+  },
+  {
+    name: 'Convento do Carmo',
+    address: 'Largo do Carmo, 1200-092 Lisboa',
+    miniDescription: `The Convent of Our Lady of Mount Carmel is a former Catholic convent located in the civil parish of Santa Maria Maior, municipality of Lisbon.`,
+    description: `The ruined Carmo Convent is said to be Lisbon's loveliest church, despite the fact it hasn’t had a roof since it fell in during the 1755 earthquake. It now stands as a reminder of the earthquake and a memorial. The beautiful gothic arches still stand and are well worth viewing. Much of the architecture dates back to the 1300s, while Manueline (Portuguese Gothic) windows and other details were added later, in the 16th and 18th centuries. You'll even be able to spot eerie South American mummies (a young boy and a young girl from Peru) if you like closely.`,
+    spotUrl: 'http://www.museuarqueologicodocarmo.pt/',
+    imgUrl: './images/carmo.jpeg',
+    schedule: 'May-Sep: Mon-Sat 10am-7pm; Oct-Apr: Mon-Sat 10am-6pm',
+  },
+  {
+    name: 'Teatro São Luiz',
+    address: 'R. António Maria Cardoso 38, 1200-027 Lisboa',
+    miniDescription: `The Teatro São Luiz is a theatre located in the Chiado district of the Portuguese capital of Lisbon.`,
+    description: `The Teatro Municipal São Luiz is one of Lisbon’s most important theatres. Built in the late 19th century in the Parisian style favoured by the age, it was also the first cinema to show sound films in Portugal.
+
+    With a troubled history of fires, today it is one of the city’s most dymanic cultural venues. It is home to the Companhia Teatral do Chiado and teatro-estúdio Mário Viegas, one of the great thinkers and drivers behind it.
+    
+    The Jardim de Inverno is one of the most sought after for conferences, debates and book launches, as well as a more informal venue for stand-up comedy, amongst other things.
+    
+    There’s also the Mini-Bar, a gastro-bar run by Chef José Avillez where you can try the famous ferrero rocher de foie gras.
+    
+    Sticking closely to topic, it’s one of the capital’s hotspots.`,
+    spotUrl: 'https://www.teatrosaoluiz.pt/',
+    imgUrl: './images/sao-luis.jpeg',
+    schedule: 'May-Sep: Mon-Sat 10am-7pm; Oct-Apr: Mon-Sat 10am-6pm',
   },
 ];
 

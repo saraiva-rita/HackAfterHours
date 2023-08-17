@@ -5,18 +5,22 @@
   <div class='list-content'>
     {{#each leisureSpots}}
       <div class='each-spot'>
-        <img class='img-list' src='{{imgUrl}}' alt='' />
-        <h3>{{name}}</h3>
-        <hr />
-        <p>{{miniDescription}}</p>
-
-        <form action='/leisureSpots/{{_id}}/' method='get'>
-          <button class='button'>See more</button>
-        </form>
+        <img src='{{imgUrl}}' alt='' />
+        <div>
+          <h3>{{name}}</h3>
+          <hr />
+          <p>{{miniDescription}}</p>
+        </div>
+        <div class="button-list">
+          <form action='/leisureSpots/{{_id}}/' method='get'>
+            <button class='button'>See more</button>
+          </form>
+        </div>
       </div>
     {{/each}}
 
   </div>
+  
   <br />
   <a href='/index'>Return to main menu</a>
 

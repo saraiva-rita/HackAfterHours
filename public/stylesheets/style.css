@@ -238,16 +238,24 @@ h5 {
   width: 300px;
   background-color: #839cb8;
   color: #333;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.button-list{
+  margin-bottom: 10px;
 }
 .each-spot h3,
 p {
   padding: 10px;
+  font-size: 15px;
 }
 
 .each-spot img {
   border-radius: 5px;
   padding-bottom: 10px;
   height: 210px;
+  width: 100%;
 }
 
 /* DETAIL SPOT */
@@ -310,3 +318,33 @@ p {
   font-size: 10px;
   font-weight: bold;
 }
+
+/* PROFILE */
+.show-favs{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* align-items: center;
+  justify-content: center; */
+  margin: 20px;
+}
+
+.fav-card {
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  margin: 20px;
+}
+
+.fav-card img {
+  width: 200px;
+  height: 133px;
+  left: 0;
+  top: 0;
+}
+
+/* ABOUT */

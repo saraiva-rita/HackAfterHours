@@ -47,6 +47,7 @@ router.get('/fooddrinkSpots/:fooddrinkId', isLoggedIn, async (req, res) => {
     res.render('categories/fooddrinkSpots/foodndrink.detail.hbs', {
       foundFooddrinkSpot,
       isFav,
+      currentUser,
     });
   } catch (error) {
     console.log(error);

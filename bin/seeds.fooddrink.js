@@ -60,7 +60,8 @@ const fooddrinkSpots = [
   {
     name: 'Basilio',
     address: 'Rua dos Bacalhoeiros, 111, 1100-068 Lisboa',
-    miniDescription: 'xx',
+    miniDescription:
+      'Located in the heart of old Lisbon, Basilio is the perfect place for your brunch, lunch or just a healthy snack! ',
     description: `Basílio, the cousin of Nicolau: His stubbornness and courage cut Amazonian savannahs and opened the way for the Holy Grail of Brazil: the coffee.
 
     Basílio, a playful and temperamental entrepreneur became one of the greatest coffee barons of the 19th century and when the coffee cycle grew, the independence of Basílio jumped out and he took a chance in his own farm. He challenged his cousin Nicolau and they prosper together with the export of coffee to all the European capitals. But the homesickness beat strongly and Basílio returned, has become a bohemian and “bon vivant” of Lisbon but always near his cousin.
@@ -74,7 +75,8 @@ const fooddrinkSpots = [
   {
     name: 'Nicolau',
     address: 'Rua dos Bacalhoeiros, 111, 1100-068 Lisboa',
-    miniDescription: 'xx',
+    miniDescription:
+      'Located in the heart of old Lisbon, Nicolau is the perfect place for your brunch, lunch or just a healthy snack!',
     description: `We are told that when he arrived, nor the Lisbon girl and child has resisted him:  Nicolau, the proud aristocrat with German blood (but Latin good talking) grew and became a reference of the capital.
 
     The curious and brave “engaging of the downtown” travelled the world (and many Lisbon princesses) but it was from Brazil that he brought the smells and tastes he shares with passion for food to whom enters in his café.
@@ -167,7 +169,8 @@ const fooddrinkSpots = [
   {
     name: 'Pensão Amor',
     address: 'R. do Alecrim 19, 1200-292 Lisboa',
-    miniDescription: 'xx',
+    miniDescription:
+      'This lively bar in the red light district bears the imprint of its bordello roots, with red wallpaper and images of cavorting naked men.',
     description: `Original? Bold? Burlesque? In Lisbon love is lived and in this space you feel that its originality also celebrates it. Pensão Amor has a bar where there are different shows, whether of burlesque, jazz concerts, plays or DJ. There are even nooks and crannies for those who are more shy, tasty cocktails, conversations and different entertainment every day.
 
     The theme is inviting, as is the uniqueness of the atmosphere. What was once a rundown boarding house, is now a space worthy of watching a burlesque show, having one of its signature cocktails or simply hanging out with friends. Go to Pensão Amor, discover its corners with your friends, boyfriend/girlfriend, alone... here you will be greeted with the smile of open minds, which gave the city of Lisbon and this old building – a new life, based on the original idea.`,

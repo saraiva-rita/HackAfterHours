@@ -47,6 +47,7 @@ router.get('/leisureSpots/:leisureId', isLoggedIn, async (req, res) => {
     res.render('categories/leisureSpots/leisure.detail.hbs', {
       foundLeisureSpot,
       isFav,
+      currentUser,
     });
   } catch (error) {
     console.log(error);

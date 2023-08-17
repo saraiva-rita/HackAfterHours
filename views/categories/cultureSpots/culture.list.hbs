@@ -11,10 +11,11 @@
           <hr />
           <p>{{miniDescription}}</p>
         </div>
-
-        <form action='/cultureSpots/{{_id}}/' method='get'>
-          <button class='button'>See more</button>
-        </form>
+        <div class="button-list">
+          <form action='/cultureSpots/{{_id}}/' method='get'>
+            <button class='button'>See more</button>
+          </form>
+        </div>
       </div>
     {{/each}}
     <br />

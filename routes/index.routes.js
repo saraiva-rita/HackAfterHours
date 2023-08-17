@@ -25,17 +25,18 @@ router.get('/contacts', (req, res, next) => {
 /* USER PROFILE */
 router.get('/profile', isLoggedIn, async (req, res) => {
   try {
-    const user = req.session.currentUser;
-    let profileInfo = await User.findById(user._id)
+    const currentUser = req.session.currentUser;
+    let profileInfo = await User.findById(currentUser._id)
       .populate('favoriteLeisure')
       .populate('favoriteCulture')
       .populate('favoriteFooddrink')
       .populate('reviewCulture')
       .populate('reviewLeisure')
       .populate('reviewFooddrink');
+      
+      res.render('profile', profileInfo);
 
-    res.render('profile', profileInfo);
-  } catch (error) {
+    } catch (error) {
     console.log(error);
   }
 });

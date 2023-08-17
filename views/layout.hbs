@@ -22,7 +22,7 @@
   </head>
 
   <!--Side Navebar-->
-  
+
   <body>
     <aside class='sidebar'>
     <div class='logo'>
@@ -57,22 +57,25 @@
       </li>
       <hr />
       <h4>My Account</h4>
-      <li>
-        <span class='material-symbols-outlined'>person</span>
-        <a href='/profile'>My Profile</a>
-      </li>
-      <li>
-        <span class='material-symbols-outlined'>person_add</span>
-        <a href='/auth/signup'>Signup</a>
-      </li>
-      <li>
-        <span class='material-symbols-outlined'>login</span>
-        <a href='/auth/login'>Login</a>
-      </li>
-      <li class='logout-link'>
-        <span class='material-symbols-outlined'>logout</span>
-        <a href='/auth/logout'>Logout</a>
-      </li>
+        <li>
+          <span class='material-symbols-outlined'>person</span>
+          <a href='/profile'>My Profile</a>
+        </li>
+        {{#if currentUser}}
+          <li class='logout-link'>
+            <span class='material-symbols-outlined'>logout</span>
+            <a href='/auth/logout'>Logout</a>
+          </li>
+        {{else}}
+          <li>
+            <span class='material-symbols-outlined'>person_add</span>
+            <a href='/auth/signup'>Signup</a>
+          </li>
+          <li>
+            <span class='material-symbols-outlined'>login</span>
+            <a href='/auth/login'>Login</a>
+          </li>
+        {{/if}}
     </ul>
   </aside>
 

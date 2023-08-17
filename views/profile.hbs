@@ -1,4 +1,4 @@
-  <div class="wrapper">
+<div class="wrapper">
       {{!-- Profile Content --}}
   <h2>Profile Page </h2>
   <br />
@@ -6,28 +6,52 @@
   <h3>{{email}}</h3>
   <hr />
   <h3>Favorite places</h3>
-  {{#each favoriteLeisure}}
-  <p>{{this.name}}</p>
-  <form action="/profile/removeFavs/{{_id}}" method="post">
-    <button type="submit">Delete</button>
-  </form>
-  {{/each}}
-  <br>
-  {{#each favoriteFooddrink}}
-  <p>{{this.name}}</p>
-    <form action="/profile/removeFavs/{{_id}}" method="post">
-    <button type="submit">Delete</button>
-  </form>
+  <div class="show-favs">
+    {{#each favoriteLeisure}}
+      <div class="fav-card">
+        <div class="fav-info">
+          <img class='img-list' src='{{this.imgUrl}}' alt='' />
+          <p>{{this.name}}</p>
+        </div>
+        <div class="fav-button">
+          <form action="/profile/removeFavs/{{_id}}" method="post">
+            <button class="fav-del-button" type="submit">Delete</button>
+          </form>
+        </div>
+      </div>
     {{/each}}
-<br>
-  {{#each favoriteCulture}}
-  <p>{{this.name}}</p>
-    <form action="/profile/removeFavs/{{_id}}" method="post">
-    <button type="submit">Delete</button>
-  </form>
-  {{/each}}
+
+    {{#each favoriteFooddrink}}
+      <div class="fav-card">
+        <div class="fav-info">
+          <img class='img-list' src='{{this.imgUrl}}' alt='' />
+          <p>{{this.name}}</p>
+        </div>
+        <div class="fav-button">
+          <form action="/profile/removeFavs/{{_id}}" method="post">
+            <button class="fav-del-button" type="submit">Delete</button>
+          </form>
+        </div>
+      </div>
+    {{/each}}
+
+    {{#each favoriteCulture}}
+      <div class="fav-card">
+        <div class="fav-info">
+          <img class='img-list' src='{{this.imgUrl}}' alt='' />
+          <p>{{this.name}}</p>
+        </div>
+        <div class="fav-button">
+          <form action="/profile/removeFavs/{{_id}}" method="post">
+            <button class="fav-del-button" type="submit">Delete</button>
+          </form>
+        </div>
+      </div>
+    {{/each}}
+  </div>
   <br>
   <hr />
+
   <h3>Personal reviews</h3>
   {{#each reviewCulture}}
   <p>{{this.content}}</p>
