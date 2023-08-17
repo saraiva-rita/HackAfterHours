@@ -96,7 +96,7 @@ router.post(
 
 // Remove favorite from profile
 router.post(
-  '/profile/removeFavs/:leisureId/',
+  '/profile/removeFavs1/:leisureId/',
   isLoggedIn,
   async (req, res, next) => {
     const { leisureId } = req.params;
