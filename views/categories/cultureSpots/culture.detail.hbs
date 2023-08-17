@@ -1,13 +1,24 @@
 <div class='spot-details wrapper'>
 
   {{! content }}
-  <h2>{{foundCultureSpot.name}}</h2>
-  <br />
-  <p>Description: {{foundCultureSpot.description}}</p>
-  <p>Address: {{foundCultureSpot.address}}</p>
-  <p>Website:
-    <a href={{foundCultureSpot.spotUrl}}>{{foundCultureSpot.spotUrl}}</a></p>
-  <p>Schedule: {{foundCultureSpot.schedule}}</p>
+  <div class="main-content">
+      <h2>{{foundCultureSpot.name}}</h2>
+    <div class="spot-details-img">
+      <img src={{foundCultureSpot.imgUrl}} alt='...' />
+    </div>
+    <div class="spot-details-text">
+      <br />
+      <p><b>Description</b>: {{foundCultureSpot.description}}</p>
+      <p><b>Address</b>: {{foundCultureSpot.address}}</p>
+      <p><b>Website</b>:
+        <a href={{foundCultureSpot.spotUrl}} target: "_blank">{{foundCultureSpot.spotUrl}}</a></p>
+      <p><b>Schedule</b>: {{foundCultureSpot.schedule}}</p>
+    </div>
+    <div class="spot-details-review">
+
+
+    </div>
+  </div>
 
   {{#if isFav}}
     <form
@@ -49,7 +60,6 @@
       </button>
     </form>
   {{/if}}
-  <img src={{foundCultureSpot.imgUrl}} class='card-img-top' alt='...' />
 
   <!-- Review Section -->
   <h4>Leave a Review!</h4>
@@ -66,6 +76,8 @@
       rows='5'
       placeholder='Write your Review here'
     ></textarea>
+    <br>
+    <br>
     <button class='button' type='submit'>Create the review</button>
   </form>
   <!-- End of the Form to Create a Review -->
@@ -78,6 +90,5 @@
     </div>
   {{/each}}
   <br />
-  <a href='/cultureSpots'>Return</a>
 
 </div>

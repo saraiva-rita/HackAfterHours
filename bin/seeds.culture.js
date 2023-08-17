@@ -77,7 +77,7 @@ const cultureSpots = [
     Location: The museum is strategically situated in the Baixa district of Lisbon, making it easily accessible to tourists exploring the city center.
     `,
     spotUrl: 'https://www.lisboastorycentre.pt/',
-    imgUrl: './images/lisboa-story-centre.jpg',
+    imgUrl: '/images/lisboa-story-centre.jpg',
     schedule: '10:00 - 19:00',
   },
   {
@@ -163,7 +163,7 @@ const cultureSpots = [
     miniDescription: `The Convent of Our Lady of Mount Carmel is a former Catholic convent located in the civil parish of Santa Maria Maior, municipality of Lisbon.`,
     description: `The ruined Carmo Convent is said to be Lisbon's loveliest church, despite the fact it hasn’t had a roof since it fell in during the 1755 earthquake. It now stands as a reminder of the earthquake and a memorial. The beautiful gothic arches still stand and are well worth viewing. Much of the architecture dates back to the 1300s, while Manueline (Portuguese Gothic) windows and other details were added later, in the 16th and 18th centuries. You'll even be able to spot eerie South American mummies (a young boy and a young girl from Peru) if you like closely.`,
     spotUrl: 'http://www.museuarqueologicodocarmo.pt/',
-    imgUrl: './images/carmo.jpeg',
+    imgUrl: './images/carmo.jpg',
     schedule: 'May-Sep: Mon-Sat 10am-7pm; Oct-Apr: Mon-Sat 10am-6pm',
   },
   {
@@ -180,7 +180,7 @@ const cultureSpots = [
     
     Sticking closely to topic, it’s one of the capital’s hotspots.`,
     spotUrl: 'https://www.teatrosaoluiz.pt/',
-    imgUrl: './images/sao-luis.jpeg',
+    imgUrl: './images/sao-luis.jpg',
     schedule: 'May-Sep: Mon-Sat 10am-7pm; Oct-Apr: Mon-Sat 10am-6pm',
   },
 ];

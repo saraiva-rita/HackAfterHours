@@ -1,12 +1,22 @@
 <div class='spot-details wrapper'>
   {{! Content }}
-  <h2>{{foundLeisureSpot.name}}</h2>
-  <br />
-  <p>Description: {{foundLeisureSpot.description}}</p>
-  <p>Address: {{foundLeisureSpot.address}}</p>
-  <p>Website:
-    <a href={{foundLeisureSpot.spotUrl}}>{{foundLeisureSpot.spotUrl}}</a></p>
-  <p>Schedule: {{foundLeisureSpot.schedule}}</p>
+
+  <div class="main-content">
+      <h2>{{foundLeisureSpot.name}}</h2>
+    <div class="spot-details-img">
+      <img src={{foundLeisureSpot.imgUrl}} alt='...' />
+    </div>
+    <div class="spot-details-text">
+      <br />
+      <p><b>Description</b>: {{foundLeisureSpot.description}}</p>
+      <p><b>Address</b>: {{foundLeisureSpot.address}}</p>
+      <p><b>Website</b>:
+        <a href={{foundLeisureSpot.spotUrl}} target: "_blank">{{foundCultureSpot.spotUrl}}</a></p>
+      <p><b>Schedule</b>: {{foundLeisureSpot.schedule}}</p>
+    </div>
+    <div class="spot-details-review">
+    </div>
+  </div>
 
   {{#if isFav}}
     <form
@@ -48,7 +58,7 @@
       </button>
     </form>
   {{/if}}
-  <img src={{foundLeisureSpot.imgUrl}} class='card-img-top' alt='...' />
+  
 
   <!-- Review Section -->
   <h4>Leave a Review!</h4>
@@ -73,6 +83,5 @@
     </div>
   {{/each}}
   <br />
-  <a href='/leisureSpots'>Return</a>
 
 </div>

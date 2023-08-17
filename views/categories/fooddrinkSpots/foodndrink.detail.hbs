@@ -1,13 +1,22 @@
 <div class='spot-details wrapper'>
-  <h2>{{foundFooddrinkSpot.name}}</h2>
-  <br />
-  <p>Description: {{foundFooddrinkSpot.description}}</p>
-  <p>Address: {{foundFooddrinkSpot.address}}</p>
-  <p>Website:
-    <a
-      href={{foundFooddrinkSpot.spotUrl}}
-    >{{foundFooddrinkSpot.spotUrl}}</a></p>
-  <p>Schedule: {{foundFooddrinkSpot.schedule}}</p>
+
+    <div class="main-content">
+      <h2>{{foundFooddrinkSpot.name}}</h2>
+    <div class="spot-details-img">
+      <img src={{foundFooddrinkSpot.imgUrl}} alt='...' />
+    </div>
+    <div class="spot-details-text">
+      <br />
+      <p><b>Description</b>: {{foundFooddrinkSpot.description}}</p>
+      <p><b>Address</b>: {{foundFooddrinkSpot.address}}</p>
+      <p><b>Website</b>:
+        <a href={{foundFooddrinkSpot.spotUrl}} target: "_blank">{{foundCultureSpot.spotUrl}}</a></p>
+      <p><b>Schedule</b>: {{foundFooddrinkSpot.schedule}}</p>
+    </div>
+    <div class="spot-details-review">
+    </div>
+  </div>
+
 
   {{#if isFav}}
     <form
@@ -52,7 +61,6 @@
       </button>
     </form>
   {{/if}}
-  <img src={{foundFooddrinkSpot.imgUrl}} class='card-img-top' alt='...' />
 
   <!-- Review Section -->
   <h4>Leave a Review!</h4>
@@ -77,6 +85,5 @@
     </div>
   {{/each}}
   <br />
-  <a href='/fooddrinkSpots'>Return</a>
 
 </div>
