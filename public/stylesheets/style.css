@@ -235,6 +235,7 @@ h5 {
 }
 .card-img-top:hover {
   opacity: 0.8;
+  transform: scale(1.01);
 }
 .card-body {
   text-align: center;
@@ -258,12 +259,15 @@ h2 {
 .each-spot {
   display: flex;
   flex-direction: column;
+  align-items: center;
   border: 1px solid #cdd7e2;
   border-radius: 5px;
   background-color: #839cb8;
   color: #333;
-  align-items: center;
   overflow: hidden;
+}
+.each-spot:hover {
+  transform: scale(1.01);
 }
 .each-spot-info {
   width: 100%;
@@ -354,6 +358,10 @@ p {
 }
 .auth-form-wrapper button {
   margin-top: 30px;
+}
+.login-a {
+  color: #e6ebf1;
+  text-decoration: underline;
 }
 
 /* CONTACTS */
